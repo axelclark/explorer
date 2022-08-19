@@ -10,7 +10,7 @@
     <title>Explorer.Backend.DataFrame — Explorer v0.3.0-dev</title>
     <link rel="stylesheet" href="dist/elixir-d5ff82e6b0f5651c0ac0.css" />
 
-    <script src="dist/sidebar_items-19b5092298.js"></script>
+    <script src="dist/sidebar_items-b168539321.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -494,6 +494,14 @@ Explorer
 
       <div class="summary-row">
         <div class="summary-signature">
+          <a href="#c:slice/2" translate="no">slice(df, indices)</a>
+
+        </div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
           <a href="#c:slice/3" translate="no">slice(df, offset, length)</a>
 
         </div>
@@ -519,14 +527,6 @@ Explorer
       <div class="summary-row">
         <div class="summary-signature">
           <a href="#c:tail/2" translate="no">tail(df, rows)</a>
-
-        </div>
-
-      </div>
-
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#c:take/2" translate="no">take(df, indices)</a>
 
         </div>
 
@@ -1851,6 +1851,34 @@ Callbacks
 
   </section>
 </section>
+<section class="detail" id="c:slice/2">
+
+  <div class="detail-header">
+    <a href="#c:slice/2" class="detail-link" title="Link to this callback">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this callback</span>
+    </a>
+    <h1 class="signature" translate="no">slice(df, indices)</h1>
+
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.3.0-dev/lib/explorer/backend/data_frame.ex#L96" class="view-source" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@callback</span> slice(<a href="#t:df/0">df</a>(), indices :: [<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>()]) :: <a href="#t:df/0">df</a>()</pre>
+
+      </div>
+
+
+  </section>
+</section>
 <section class="detail" id="c:slice/3">
 
   <div class="detail-header">
@@ -1860,7 +1888,7 @@ Callbacks
     </a>
     <h1 class="signature" translate="no">slice(df, offset, length)</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.3.0-dev/lib/explorer/backend/data_frame.ex#L96" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.3.0-dev/lib/explorer/backend/data_frame.ex#L97" class="view-source" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -1971,34 +1999,6 @@ Callbacks
 
   </section>
 </section>
-<section class="detail" id="c:take/2">
-
-  <div class="detail-header">
-    <a href="#c:take/2" class="detail-link" title="Link to this callback">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this callback</span>
-    </a>
-    <h1 class="signature" translate="no">take(df, indices)</h1>
-
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.3.0-dev/lib/explorer/backend/data_frame.ex#L97" class="view-source" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@callback</span> take(<a href="#t:df/0">df</a>(), indices :: [<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>()]) :: <a href="#t:df/0">df</a>()</pre>
-
-      </div>
-
-
-  </section>
-</section>
 <section class="detail" id="c:to_csv/4">
 
   <div class="detail-header">
@@ -2054,7 +2054,11 @@ Callbacks
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@callback</span> to_ipc(<a href="#t:df/0">df</a>(), filename :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(), compression :: nil | <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">atom</a>()) ::
+          <pre translate="no"><span class="attribute">@callback</span> to_ipc(
+  <a href="#t:df/0">df</a>(),
+  filename :: <a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>(),
+  compression :: {nil | <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">atom</a>(), nil | <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>()}
+) ::
   <a href="#t:result/1">result</a>(<a href="https://hexdocs.pm/elixir/String.html#t:t/0">String.t</a>())</pre>
 
       </div>
