@@ -10,7 +10,7 @@
     <title>Changelog — Explorer v0.3.0-dev</title>
     <link rel="stylesheet" href="dist/elixir-64c5e2b63575bddb1c5b.css" />
 
-    <script src="dist/sidebar_items-c70dbeb746.js"></script>
+    <script src="dist/sidebar_items-f0663ff646.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -111,7 +111,7 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
   <a href="#unreleased" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
   <p class="sr-only">unreleased</p>
   </a>
-  [Unreleased]
+  <a href="https://github.com/elixir-nx/explorer/compare/v0.2.0...HEAD" title="">Unreleased</a>
 </h2>
 <h3 id="added" class="section-heading">
   <a href="#added" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
@@ -119,12 +119,38 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
   </a>
   Added
 </h3>
-<ul><li>Add <code class="inline">DataFrame.concat_columns/1</code> and <code class="inline">DataFrame.concat_columns/2</code> for horizontally stacking
-dataframes.</li></ul><h2 id="v0-2-0-2022-06-22" class="section-heading">
+<ul><li><p>Add <code class="inline">DataFrame.concat_columns/1</code> and <code class="inline">DataFrame.concat_columns/2</code> for horizontally stacking
+dataframes.</p></li><li><p>Add compression as an option to write parquet files.</p></li><li><p>Add count metadata to <code class="inline">DataFrame</code> table reader.</p></li><li><p>Add <code class="inline">DataFrame.filter_with/2</code>, <code class="inline">DataFrame.summarise_with/2</code>, <code class="inline">DataFrame.mutate_with/2</code> and
+<code class="inline">DataFrame.arrange_with/2</code>. They all accept a <code class="inline">DataFrame</code> and a function, and they all work with
+a new concept called &quot;lazy series&quot;.</p><p>Lazy Series is an opaque representation of a series that can be
+used to perform complex operations without pulling data from the series. This is faster than
+using masks. There is no big difference from the API perspective compared to the functions that were
+accepting callbacks before (eg. <code class="inline">filter/2</code> and the new <code class="inline">filter_with/2</code>), with the exception being
+<code class="inline">DataFrame.summarise_with/2</code> that now accepts a lot more operations.</p></li></ul><h3 id="changed" class="section-heading">
+  <a href="#changed" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">changed</p>
+  </a>
+  Changed
+</h3>
+<ul><li>Bump version requirement of the <code class="inline">table</code> dependency to <code class="inline">~&gt; 0.1.2</code>, and raise for non-tabular values.</li><li>Normalize how columns are handled. This changes some functions to accept one column or
+a list of columns, ranges, indexes and callbacks selecting columns.</li><li>Rename <code class="inline">DataFrame.filter/2</code> to <code class="inline">DataFrame.mask/2</code>.</li><li>Rename <code class="inline">Series.filter/2</code> to <code class="inline">Series.mask/2</code>.</li><li>Rename <code class="inline">take/2</code> from both <code class="inline">Series</code> and <code class="inline">DataFrame</code> to <code class="inline">slice/2</code>. <code class="inline">slice/2</code> now they accept ranges as well.</li><li>Raise an error if <code class="inline">DataFrame.pivot_wider/4</code> has float columns as IDs. This is because we can´t
+properly compare floats.</li><li>Change <code class="inline">DataFrame.distinct/2</code> to accept columns as argument instead of receiving it as option.</li></ul><h3 id="fixed" class="section-heading">
+  <a href="#fixed" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">fixed</p>
+  </a>
+  Fixed
+</h3>
+<ul><li>Ensure that we can compare boolean series in functions like <code class="inline">Series.equal/2</code>.</li><li>Fix rename of columns after summarise.</li><li>Fix inspect of float series containing <code class="inline">NaN</code> or <code class="inline">Infinity</code> values. They are represented as atoms.</li></ul><h3 id="deprecated" class="section-heading">
+  <a href="#deprecated" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">deprecated</p>
+  </a>
+  Deprecated
+</h3>
+<ul><li>Deprecate <code class="inline">DataFrame.filter/2</code> with a callback in favor of <code class="inline">DataFrame.filter_with/2</code>.</li></ul><h2 id="v0-2-0-2022-06-22" class="section-heading">
   <a href="#v0-2-0-2022-06-22" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
   <p class="sr-only">v0-2-0-2022-06-22</p>
   </a>
-  [v0.2.0] - 2022-06-22
+  <a href="https://github.com/elixir-nx/explorer/compare/v0.1.1...v0.2.0" title="">v0.2.0</a> - 2022-06-22
 </h2>
 <h3 id="added-1" class="section-heading">
   <a href="#added-1" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
@@ -132,15 +158,15 @@ dataframes.</li></ul><h2 id="v0-2-0-2022-06-22" class="section-heading">
   </a>
   Added
 </h3>
-<ul><li>Consistently support ranges throughout the columns API</li><li>Support negative indexes throughout the columns API</li><li>Integrate with the <code class="inline">table</code> package</li><li>Add <code class="inline">Series.to_enum/1</code> for lazily traversing the series</li><li>Add <code class="inline">Series.coalesce/1</code> and <code class="inline">Series.coalesce/2</code> for finding the first non-null value in a list of series</li></ul><h3 id="changed" class="section-heading">
-  <a href="#changed" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
-  <p class="sr-only">changed</p>
+<ul><li>Consistently support ranges throughout the columns API</li><li>Support negative indexes throughout the columns API</li><li>Integrate with the <code class="inline">table</code> package</li><li>Add <code class="inline">Series.to_enum/1</code> for lazily traversing the series</li><li>Add <code class="inline">Series.coalesce/1</code> and <code class="inline">Series.coalesce/2</code> for finding the first non-null value in a list of series</li></ul><h3 id="changed-1" class="section-heading">
+  <a href="#changed-1" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">changed-1</p>
   </a>
   Changed
 </h3>
-<ul><li><code class="inline">Series.length/1</code> is now <code class="inline">Series.size/1</code> in keeping with Elixir idioms</li><li><code class="inline">Nx</code> is now an optional dependency</li><li>Minimum Elixir version is now 1.13</li><li><code class="inline">DataFrame.to_map/2</code> is now <code class="inline">DataFrame.to_columns/2</code> and <code class="inline">DataFrame.to_series/2</code></li><li><a href="https://hexdocs.pm/rustler/0.25.0/Rustler.html"><code class="inline">Rustler</code></a> is now an optional dependency</li><li><code class="inline">read_</code> and <code class="inline">write_</code> IO functions are now <code class="inline">from_</code> and <code class="inline">to_</code></li><li><code class="inline">to_binary</code> is now <code class="inline">dump_csv</code></li><li>Now uses <code class="inline">polars</code>'s &quot;simd&quot; feature</li><li>Now uses <code class="inline">polars</code>'s &quot;performant&quot; feature</li><li><code class="inline">Explorer.default_backend/0</code> is now <a href="Explorer.Backend.html#get/0"><code class="inline">Explorer.Backend.get/0</code></a></li><li><code class="inline">Explorer.default_backend/1</code> is now <a href="Explorer.Backend.html#put/1"><code class="inline">Explorer.Backend.put/1</code></a></li><li><code class="inline">Series.cum_*</code> functions are now <code class="inline">Series.cumulative_*</code> to mirror <code class="inline">Nx</code></li><li><code class="inline">Series.rolling_*</code> functions are now <code class="inline">Series.window_*</code> to mirror <code class="inline">Nx</code></li><li><code class="inline">reverse?</code> is now an option instead of an argument in <code class="inline">Series.cumulative_*</code> functions</li><li><code class="inline">DataFrame.from_columns/2</code> and <code class="inline">DataFrame.from_rows/2</code> is now <code class="inline">DataFrame.new/2</code></li><li>Rename &quot;col&quot; to &quot;column&quot; throughout the API</li><li>Remove &quot;with_&quot; prefix in options throughout the API</li><li><code class="inline">DataFrame.table/2</code> accepts options with <code class="inline">:limit</code> instead of single integer</li><li><code class="inline">rename/2</code> no longer accepts a function, use <code class="inline">rename_with/2</code> instead</li><li><code class="inline">rename_with/3</code> now expects the function as the last argument</li></ul><h3 id="fixed" class="section-heading">
-  <a href="#fixed" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
-  <p class="sr-only">fixed</p>
+<ul><li><code class="inline">Series.length/1</code> is now <code class="inline">Series.size/1</code> in keeping with Elixir idioms</li><li><code class="inline">Nx</code> is now an optional dependency</li><li>Minimum Elixir version is now 1.13</li><li><code class="inline">DataFrame.to_map/2</code> is now <code class="inline">DataFrame.to_columns/2</code> and <code class="inline">DataFrame.to_series/2</code></li><li><a href="https://hexdocs.pm/rustler/0.25.0/Rustler.html"><code class="inline">Rustler</code></a> is now an optional dependency</li><li><code class="inline">read_</code> and <code class="inline">write_</code> IO functions are now <code class="inline">from_</code> and <code class="inline">to_</code></li><li><code class="inline">to_binary</code> is now <code class="inline">dump_csv</code></li><li>Now uses <code class="inline">polars</code>'s &quot;simd&quot; feature</li><li>Now uses <code class="inline">polars</code>'s &quot;performant&quot; feature</li><li><code class="inline">Explorer.default_backend/0</code> is now <a href="Explorer.Backend.html#get/0"><code class="inline">Explorer.Backend.get/0</code></a></li><li><code class="inline">Explorer.default_backend/1</code> is now <a href="Explorer.Backend.html#put/1"><code class="inline">Explorer.Backend.put/1</code></a></li><li><code class="inline">Series.cum_*</code> functions are now <code class="inline">Series.cumulative_*</code> to mirror <code class="inline">Nx</code></li><li><code class="inline">Series.rolling_*</code> functions are now <code class="inline">Series.window_*</code> to mirror <code class="inline">Nx</code></li><li><code class="inline">reverse?</code> is now an option instead of an argument in <code class="inline">Series.cumulative_*</code> functions</li><li><code class="inline">DataFrame.from_columns/2</code> and <code class="inline">DataFrame.from_rows/2</code> is now <code class="inline">DataFrame.new/2</code></li><li>Rename &quot;col&quot; to &quot;column&quot; throughout the API</li><li>Remove &quot;with_&quot; prefix in options throughout the API</li><li><code class="inline">DataFrame.table/2</code> accepts options with <code class="inline">:limit</code> instead of single integer</li><li><code class="inline">rename/2</code> no longer accepts a function, use <code class="inline">rename_with/2</code> instead</li><li><code class="inline">rename_with/3</code> now expects the function as the last argument</li></ul><h3 id="fixed-1" class="section-heading">
+  <a href="#fixed-1" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">fixed-1</p>
   </a>
   Fixed
 </h3>
@@ -148,7 +174,7 @@ dataframes.</li></ul><h2 id="v0-2-0-2022-06-22" class="section-heading">
   <a href="#v0-1-1-2022-04-27" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
   <p class="sr-only">v0-1-1-2022-04-27</p>
   </a>
-  [v0.1.1] - 2022-04-27
+  <a href="https://github.com/elixir-nx/explorer/compare/v0.1.0...v0.1.1" title="">v0.1.1</a> - 2022-04-27
 </h2>
 <h3 id="security" class="section-heading">
   <a href="#security" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
@@ -160,7 +186,7 @@ dataframes.</li></ul><h2 id="v0-2-0-2022-06-22" class="section-heading">
   <a href="#v0-1-0-2022-04-26" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
   <p class="sr-only">v0-1-0-2022-04-26</p>
   </a>
-  [v0.1.0] - 2022-04-26
+  <a href="https://github.com/elixir-nx/explorer/releases/tag/v0.1.0" title="">v0.1.0</a> - 2022-04-26
 </h2>
 <p>First release.</p>
 <div class="bottom-actions">
