@@ -12,7 +12,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-X7YVL3G2.js"></script>
-    <script src="dist/sidebar_items-1090A1E0.js"></script>
+    <script src="dist/sidebar_items-24627408.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -314,7 +314,7 @@ Explorer
 
       <div class="summary-row">
         <div class="summary-signature">
-          <a href="#c:eq/2" translate="no">eq(arg1, arg2)</a>
+          <a href="#c:equal/2" translate="no">equal(arg1, arg2)</a>
 
         </div>
 
@@ -354,7 +354,7 @@ Explorer
 
       <div class="summary-row">
         <div class="summary-signature">
-          <a href="#c:gt/2" translate="no">gt(arg1, arg2)</a>
+          <a href="#c:greater/2" translate="no">greater(arg1, arg2)</a>
 
         </div>
 
@@ -362,7 +362,7 @@ Explorer
 
       <div class="summary-row">
         <div class="summary-signature">
-          <a href="#c:gt_eq/2" translate="no">gt_eq(arg1, arg2)</a>
+          <a href="#c:greater_equal/2" translate="no">greater_equal(arg1, arg2)</a>
 
         </div>
 
@@ -410,7 +410,7 @@ Explorer
 
       <div class="summary-row">
         <div class="summary-signature">
-          <a href="#c:lt/2" translate="no">lt(arg1, arg2)</a>
+          <a href="#c:less/2" translate="no">less(arg1, arg2)</a>
 
         </div>
 
@@ -418,7 +418,7 @@ Explorer
 
       <div class="summary-row">
         <div class="summary-signature">
-          <a href="#c:lt_eq/2" translate="no">lt_eq(arg1, arg2)</a>
+          <a href="#c:less_equal/2" translate="no">less_equal(arg1, arg2)</a>
 
         </div>
 
@@ -490,7 +490,7 @@ Explorer
 
       <div class="summary-row">
         <div class="summary-signature">
-          <a href="#c:neq/2" translate="no">neq(arg1, arg2)</a>
+          <a href="#c:not_equal/2" translate="no">not_equal(arg1, arg2)</a>
 
         </div>
 
@@ -1370,14 +1370,14 @@ Callbacks
 
   </section>
 </section>
-<section class="detail" id="c:eq/2">
+<section class="detail" id="c:equal/2">
 
   <div class="detail-header">
-    <a href="#c:eq/2" class="detail-link" title="Link to this callback">
+    <a href="#c:equal/2" class="detail-link" title="Link to this callback">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this callback</span>
     </a>
-    <h1 class="signature" translate="no">eq(arg1, arg2)</h1>
+    <h1 class="signature" translate="no">equal(arg1, arg2)</h1>
 
       <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0-dev/lib/explorer/backend/series.ex#L78" class="view-source" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
@@ -1391,7 +1391,7 @@ Callbacks
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@callback</span> eq(<a href="#t:s/0">s</a>() | <a href="#t:valid_types/0">valid_types</a>(), <a href="#t:s/0">s</a>() | <a href="#t:valid_types/0">valid_types</a>()) :: <a href="#t:s/0">s</a>()</pre>
+          <pre translate="no"><span class="attribute">@callback</span> equal(<a href="#t:s/0">s</a>() | <a href="#t:valid_types/0">valid_types</a>(), <a href="#t:s/0">s</a>() | <a href="#t:valid_types/0">valid_types</a>()) :: <a href="#t:s/0">s</a>()</pre>
 
       </div>
 
@@ -1513,14 +1513,14 @@ Callbacks
 
   </section>
 </section>
-<section class="detail" id="c:gt/2">
+<section class="detail" id="c:greater/2">
 
   <div class="detail-header">
-    <a href="#c:gt/2" class="detail-link" title="Link to this callback">
+    <a href="#c:greater/2" class="detail-link" title="Link to this callback">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this callback</span>
     </a>
-    <h1 class="signature" translate="no">gt(arg1, arg2)</h1>
+    <h1 class="signature" translate="no">greater(arg1, arg2)</h1>
 
       <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0-dev/lib/explorer/backend/series.ex#L80" class="view-source" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
@@ -1534,21 +1534,21 @@ Callbacks
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@callback</span> gt(<a href="#t:s/0">s</a>() | <a href="#t:valid_types/0">valid_types</a>(), <a href="#t:s/0">s</a>() | <a href="#t:valid_types/0">valid_types</a>()) :: <a href="#t:s/0">s</a>()</pre>
+          <pre translate="no"><span class="attribute">@callback</span> greater(<a href="#t:s/0">s</a>() | <a href="#t:valid_types/0">valid_types</a>(), <a href="#t:s/0">s</a>() | <a href="#t:valid_types/0">valid_types</a>()) :: <a href="#t:s/0">s</a>()</pre>
 
       </div>
 
 
   </section>
 </section>
-<section class="detail" id="c:gt_eq/2">
+<section class="detail" id="c:greater_equal/2">
 
   <div class="detail-header">
-    <a href="#c:gt_eq/2" class="detail-link" title="Link to this callback">
+    <a href="#c:greater_equal/2" class="detail-link" title="Link to this callback">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this callback</span>
     </a>
-    <h1 class="signature" translate="no">gt_eq(arg1, arg2)</h1>
+    <h1 class="signature" translate="no">greater_equal(arg1, arg2)</h1>
 
       <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0-dev/lib/explorer/backend/series.ex#L81" class="view-source" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
@@ -1562,7 +1562,7 @@ Callbacks
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@callback</span> gt_eq(<a href="#t:s/0">s</a>() | <a href="#t:valid_types/0">valid_types</a>(), <a href="#t:s/0">s</a>() | <a href="#t:valid_types/0">valid_types</a>()) :: <a href="#t:s/0">s</a>()</pre>
+          <pre translate="no"><span class="attribute">@callback</span> greater_equal(<a href="#t:s/0">s</a>() | <a href="#t:valid_types/0">valid_types</a>(), <a href="#t:s/0">s</a>() | <a href="#t:valid_types/0">valid_types</a>()) :: <a href="#t:s/0">s</a>()</pre>
 
       </div>
 
@@ -1709,14 +1709,14 @@ Callbacks
 
   </section>
 </section>
-<section class="detail" id="c:lt/2">
+<section class="detail" id="c:less/2">
 
   <div class="detail-header">
-    <a href="#c:lt/2" class="detail-link" title="Link to this callback">
+    <a href="#c:less/2" class="detail-link" title="Link to this callback">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this callback</span>
     </a>
-    <h1 class="signature" translate="no">lt(arg1, arg2)</h1>
+    <h1 class="signature" translate="no">less(arg1, arg2)</h1>
 
       <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0-dev/lib/explorer/backend/series.ex#L82" class="view-source" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
@@ -1730,21 +1730,21 @@ Callbacks
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@callback</span> lt(<a href="#t:s/0">s</a>() | <a href="#t:valid_types/0">valid_types</a>(), <a href="#t:s/0">s</a>() | <a href="#t:valid_types/0">valid_types</a>()) :: <a href="#t:s/0">s</a>()</pre>
+          <pre translate="no"><span class="attribute">@callback</span> less(<a href="#t:s/0">s</a>() | <a href="#t:valid_types/0">valid_types</a>(), <a href="#t:s/0">s</a>() | <a href="#t:valid_types/0">valid_types</a>()) :: <a href="#t:s/0">s</a>()</pre>
 
       </div>
 
 
   </section>
 </section>
-<section class="detail" id="c:lt_eq/2">
+<section class="detail" id="c:less_equal/2">
 
   <div class="detail-header">
-    <a href="#c:lt_eq/2" class="detail-link" title="Link to this callback">
+    <a href="#c:less_equal/2" class="detail-link" title="Link to this callback">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this callback</span>
     </a>
-    <h1 class="signature" translate="no">lt_eq(arg1, arg2)</h1>
+    <h1 class="signature" translate="no">less_equal(arg1, arg2)</h1>
 
       <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0-dev/lib/explorer/backend/series.ex#L83" class="view-source" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
@@ -1758,7 +1758,7 @@ Callbacks
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@callback</span> lt_eq(<a href="#t:s/0">s</a>() | <a href="#t:valid_types/0">valid_types</a>(), <a href="#t:s/0">s</a>() | <a href="#t:valid_types/0">valid_types</a>()) :: <a href="#t:s/0">s</a>()</pre>
+          <pre translate="no"><span class="attribute">@callback</span> less_equal(<a href="#t:s/0">s</a>() | <a href="#t:valid_types/0">valid_types</a>(), <a href="#t:s/0">s</a>() | <a href="#t:valid_types/0">valid_types</a>()) :: <a href="#t:s/0">s</a>()</pre>
 
       </div>
 
@@ -1989,14 +1989,14 @@ Callbacks
 
   </section>
 </section>
-<section class="detail" id="c:neq/2">
+<section class="detail" id="c:not_equal/2">
 
   <div class="detail-header">
-    <a href="#c:neq/2" class="detail-link" title="Link to this callback">
+    <a href="#c:not_equal/2" class="detail-link" title="Link to this callback">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this callback</span>
     </a>
-    <h1 class="signature" translate="no">neq(arg1, arg2)</h1>
+    <h1 class="signature" translate="no">not_equal(arg1, arg2)</h1>
 
       <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0-dev/lib/explorer/backend/series.ex#L79" class="view-source" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
@@ -2010,7 +2010,7 @@ Callbacks
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@callback</span> neq(<a href="#t:s/0">s</a>() | <a href="#t:valid_types/0">valid_types</a>(), <a href="#t:s/0">s</a>() | <a href="#t:valid_types/0">valid_types</a>()) :: <a href="#t:s/0">s</a>()</pre>
+          <pre translate="no"><span class="attribute">@callback</span> not_equal(<a href="#t:s/0">s</a>() | <a href="#t:valid_types/0">valid_types</a>(), <a href="#t:s/0">s</a>() | <a href="#t:valid_types/0">valid_types</a>()) :: <a href="#t:s/0">s</a>()</pre>
 
       </div>
 
