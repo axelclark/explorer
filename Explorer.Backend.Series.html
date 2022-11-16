@@ -1814,7 +1814,7 @@ Callbacks
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@callback</span> max(<a href="#t:s/0">s</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">number</a>() | <a href="https://hexdocs.pm/elixir/Date.html#t:t/0">Date.t</a>() | <a href="https://hexdocs.pm/elixir/NaiveDateTime.html#t:t/0">NaiveDateTime.t</a>() | <a href="#t:lazy_s/0">lazy_s</a>()</pre>
+          <pre translate="no"><span class="attribute">@callback</span> max(<a href="#t:s/0">s</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">number</a>() | <a href="https://hexdocs.pm/elixir/Date.html#t:t/0">Date.t</a>() | <a href="https://hexdocs.pm/elixir/NaiveDateTime.html#t:t/0">NaiveDateTime.t</a>() | <a href="#t:lazy_s/0">lazy_s</a>() | nil</pre>
 
       </div>
 
@@ -1842,7 +1842,7 @@ Callbacks
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@callback</span> mean(<a href="#t:s/0">s</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">float</a>() | <a href="#t:lazy_s/0">lazy_s</a>()</pre>
+          <pre translate="no"><span class="attribute">@callback</span> mean(<a href="#t:s/0">s</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">float</a>() | <a href="#t:lazy_s/0">lazy_s</a>() | nil</pre>
 
       </div>
 
@@ -1870,7 +1870,7 @@ Callbacks
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@callback</span> median(<a href="#t:s/0">s</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">float</a>() | <a href="#t:lazy_s/0">lazy_s</a>()</pre>
+          <pre translate="no"><span class="attribute">@callback</span> median(<a href="#t:s/0">s</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">float</a>() | <a href="#t:lazy_s/0">lazy_s</a>() | nil</pre>
 
       </div>
 
@@ -1926,7 +1926,7 @@ Callbacks
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@callback</span> min(<a href="#t:s/0">s</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">number</a>() | <a href="https://hexdocs.pm/elixir/Date.html#t:t/0">Date.t</a>() | <a href="https://hexdocs.pm/elixir/NaiveDateTime.html#t:t/0">NaiveDateTime.t</a>() | <a href="#t:lazy_s/0">lazy_s</a>()</pre>
+          <pre translate="no"><span class="attribute">@callback</span> min(<a href="#t:s/0">s</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">number</a>() | <a href="https://hexdocs.pm/elixir/Date.html#t:t/0">Date.t</a>() | <a href="https://hexdocs.pm/elixir/NaiveDateTime.html#t:t/0">NaiveDateTime.t</a>() | <a href="#t:lazy_s/0">lazy_s</a>() | nil</pre>
 
       </div>
 
@@ -2094,7 +2094,8 @@ Callbacks
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@callback</span> quantile(<a href="#t:s/0">s</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">float</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">number</a>() | <a href="https://hexdocs.pm/elixir/Date.html#t:t/0">Date.t</a>() | <a href="https://hexdocs.pm/elixir/NaiveDateTime.html#t:t/0">NaiveDateTime.t</a>() | <a href="#t:lazy_s/0">lazy_s</a>()</pre>
+          <pre translate="no"><span class="attribute">@callback</span> quantile(<a href="#t:s/0">s</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">float</a>()) ::
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">number</a>() | <a href="https://hexdocs.pm/elixir/Date.html#t:t/0">Date.t</a>() | <a href="https://hexdocs.pm/elixir/NaiveDateTime.html#t:t/0">NaiveDateTime.t</a>() | <a href="#t:lazy_s/0">lazy_s</a>() | nil</pre>
 
       </div>
 
@@ -2353,7 +2354,7 @@ Callbacks
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@callback</span> standard_deviation(<a href="#t:s/0">s</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">float</a>() | <a href="#t:lazy_s/0">lazy_s</a>()</pre>
+          <pre translate="no"><span class="attribute">@callback</span> standard_deviation(<a href="#t:s/0">s</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">float</a>() | <a href="#t:lazy_s/0">lazy_s</a>() | nil</pre>
 
       </div>
 
@@ -2409,7 +2410,7 @@ Callbacks
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@callback</span> sum(<a href="#t:s/0">s</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">number</a>() | <a href="#t:lazy_s/0">lazy_s</a>()</pre>
+          <pre translate="no"><span class="attribute">@callback</span> sum(<a href="#t:s/0">s</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">number</a>() | <a href="#t:lazy_s/0">lazy_s</a>() | nil</pre>
 
       </div>
 
@@ -2605,7 +2606,7 @@ Callbacks
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@callback</span> variance(<a href="#t:s/0">s</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">float</a>() | <a href="#t:lazy_s/0">lazy_s</a>()</pre>
+          <pre translate="no"><span class="attribute">@callback</span> variance(<a href="#t:s/0">s</a>()) :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">float</a>() | <a href="#t:lazy_s/0">lazy_s</a>() | nil</pre>
 
       </div>
 
