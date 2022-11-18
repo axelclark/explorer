@@ -12,7 +12,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-X7YVL3G2.js"></script>
-    <script src="dist/sidebar_items-24627408.js"></script>
+    <script src="dist/sidebar_items-BF48638D.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -113,21 +113,21 @@ Explorer
   <section id="moduledoc">
 <p>High-level query for Explorer.</p><p>Queries convert regular Elixir code which compile to efficient
 dataframes operations. Variables in queries represent dataframe
-column names:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="3840580085-1">(</span><span class="ss">col1</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="3840580085-2">[</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="p" data-group-id="3840580085-2">]</span><span class="p">,</span><span class="w"> </span><span class="ss">col2</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="3840580085-3">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p" data-group-id="3840580085-3">]</span><span class="p" data-group-id="3840580085-1">)</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">filter</span><span class="p" data-group-id="3840580085-4">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">col2</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="3840580085-4">)</span><span class="w">
-</span><span class="p" data-group-id="3840580085-5">#</span><span class="nc" data-group-id="3840580085-5">Explorer.DataFrame</span><span class="p" data-group-id="3840580085-5">&lt;</span><span class="w">
-  </span><span class="nc">Polars</span><span class="p" data-group-id="3840580085-6">[</span><span class="mi">1</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="3840580085-6">]</span><span class="w">
-  </span><span class="n">col1</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="p" data-group-id="3840580085-7">[</span><span class="s">&quot;c&quot;</span><span class="p" data-group-id="3840580085-7">]</span><span class="w">
-  </span><span class="n">col2</span><span class="w"> </span><span class="n">integer</span><span class="w"> </span><span class="p" data-group-id="3840580085-8">[</span><span class="mi">3</span><span class="p" data-group-id="3840580085-8">]</span><span class="w">
-</span><span class="p" data-group-id="3840580085-5">&gt;</span></code></pre><p>If you want to pass outside values to the query, you must escape
+column names:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="9272455516-1">(</span><span class="ss">col1</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9272455516-2">[</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="p" data-group-id="9272455516-2">]</span><span class="p">,</span><span class="w"> </span><span class="ss">col2</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9272455516-3">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p" data-group-id="9272455516-3">]</span><span class="p" data-group-id="9272455516-1">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">filter</span><span class="p" data-group-id="9272455516-4">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">col2</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="9272455516-4">)</span><span class="w">
+</span><span class="p" data-group-id="9272455516-5">#</span><span class="nc" data-group-id="9272455516-5">Explorer.DataFrame</span><span class="p" data-group-id="9272455516-5">&lt;</span><span class="w">
+  </span><span class="nc">Polars</span><span class="p" data-group-id="9272455516-6">[</span><span class="mi">1</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="9272455516-6">]</span><span class="w">
+  </span><span class="n">col1</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="p" data-group-id="9272455516-7">[</span><span class="s">&quot;c&quot;</span><span class="p" data-group-id="9272455516-7">]</span><span class="w">
+  </span><span class="n">col2</span><span class="w"> </span><span class="n">integer</span><span class="w"> </span><span class="p" data-group-id="9272455516-8">[</span><span class="mi">3</span><span class="p" data-group-id="9272455516-8">]</span><span class="w">
+</span><span class="p" data-group-id="9272455516-5">&gt;</span></code></pre><p>If you want to pass outside values to the query, you must escape
 them using <code class="inline">^</code>:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="9591336672-1">(</span><span class="ss">col1</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9591336672-2">[</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="p" data-group-id="9591336672-2">]</span><span class="p">,</span><span class="w"> </span><span class="ss">col2</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="9591336672-3">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p" data-group-id="9591336672-3">]</span><span class="p" data-group-id="9591336672-1">)</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">filter</span><span class="p" data-group-id="9591336672-4">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">col2</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">^</span><span class="n">min</span><span class="p" data-group-id="9591336672-4">)</span><span class="w">
-</span><span class="p" data-group-id="9591336672-5">#</span><span class="nc" data-group-id="9591336672-5">Explorer.DataFrame</span><span class="p" data-group-id="9591336672-5">&lt;</span><span class="w">
-  </span><span class="nc">Polars</span><span class="p" data-group-id="9591336672-6">[</span><span class="mi">1</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="9591336672-6">]</span><span class="w">
-  </span><span class="n">col1</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="p" data-group-id="9591336672-7">[</span><span class="s">&quot;c&quot;</span><span class="p" data-group-id="9591336672-7">]</span><span class="w">
-  </span><span class="n">col2</span><span class="w"> </span><span class="n">integer</span><span class="w"> </span><span class="p" data-group-id="9591336672-8">[</span><span class="mi">3</span><span class="p" data-group-id="9591336672-8">]</span><span class="w">
-</span><span class="p" data-group-id="9591336672-5">&gt;</span></code></pre><p>All operations from <a href="Explorer.Series.html"><code class="inline">Explorer.Series</code></a> are imported inside queries.
+</span><span class="gp unselectable">iex&gt; </span><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="4761362115-1">(</span><span class="ss">col1</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4761362115-2">[</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="p" data-group-id="4761362115-2">]</span><span class="p">,</span><span class="w"> </span><span class="ss">col2</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4761362115-3">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p" data-group-id="4761362115-3">]</span><span class="p" data-group-id="4761362115-1">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">filter</span><span class="p" data-group-id="4761362115-4">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">col2</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">^</span><span class="n">min</span><span class="p" data-group-id="4761362115-4">)</span><span class="w">
+</span><span class="p" data-group-id="4761362115-5">#</span><span class="nc" data-group-id="4761362115-5">Explorer.DataFrame</span><span class="p" data-group-id="4761362115-5">&lt;</span><span class="w">
+  </span><span class="nc">Polars</span><span class="p" data-group-id="4761362115-6">[</span><span class="mi">1</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="4761362115-6">]</span><span class="w">
+  </span><span class="n">col1</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="p" data-group-id="4761362115-7">[</span><span class="s">&quot;c&quot;</span><span class="p" data-group-id="4761362115-7">]</span><span class="w">
+  </span><span class="n">col2</span><span class="w"> </span><span class="n">integer</span><span class="w"> </span><span class="p" data-group-id="4761362115-8">[</span><span class="mi">3</span><span class="p" data-group-id="4761362115-8">]</span><span class="w">
+</span><span class="p" data-group-id="4761362115-5">&gt;</span></code></pre><p>All operations from <a href="Explorer.Series.html"><code class="inline">Explorer.Series</code></a> are imported inside queries.
 This module also provides operators to use in queries, which are
 also imported into queries.</p><h2 id="module-implementation-details" class="section-heading">
   <a href="#module-implementation-details" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
@@ -136,7 +136,7 @@ also imported into queries.</p><h2 id="module-implementation-details" class="sec
   Implementation details
 </h2>
 <p>Queries simply become lazy dataframe operations at runtime.
-For example, the following query</p><pre><code class="makeup elixir" translate="no"><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">filter</span><span class="p" data-group-id="1402944300-1">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">col2</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="1402944300-1">)</span></code></pre><p>is equivalent to:</p><pre><code class="makeup elixir" translate="no"><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">filter_with</span><span class="p" data-group-id="4131095305-1">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="k" data-group-id="4131095305-2">fn</span><span class="w"> </span><span class="n">df</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">df</span><span class="p" data-group-id="4131095305-3">[</span><span class="s">&quot;col2&quot;</span><span class="p" data-group-id="4131095305-3">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="k" data-group-id="4131095305-2">end</span><span class="p" data-group-id="4131095305-1">)</span></code></pre><p>This means that, whenever you want to generate queries programatically,
+For example, the following query</p><pre><code class="makeup elixir" translate="no"><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">filter</span><span class="p" data-group-id="7690880131-1">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">col2</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="7690880131-1">)</span></code></pre><p>is equivalent to:</p><pre><code class="makeup elixir" translate="no"><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">filter_with</span><span class="p" data-group-id="7576573149-1">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="k" data-group-id="7576573149-2">fn</span><span class="w"> </span><span class="n">df</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">df</span><span class="p" data-group-id="7576573149-3">[</span><span class="s">&quot;col2&quot;</span><span class="p" data-group-id="7576573149-3">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="k" data-group-id="7576573149-2">end</span><span class="p" data-group-id="7576573149-1">)</span></code></pre><p>This means that, whenever you want to generate queries programatically,
 you can fallback to the regular <code class="inline">_with</code> APIs.</p>
   </section>
 
@@ -154,6 +154,56 @@ you can fallback to the regular <code class="inline">_with</code> APIs.</p>
     <h2>
       <a href="#functions">Functions</a>
     </h2>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#**/2" translate="no">left ** right</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Delegate to <a href="Explorer.Series.html#pow/2"><code class="inline">Explorer.Series.pow/2</code></a>.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#*/2" translate="no">left * right</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Delegate to <a href="Explorer.Series.html#multiply/2"><code class="inline">Explorer.Series.multiply/2</code></a>.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#+/2" translate="no">left + right</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Delegate to <a href="Explorer.Series.html#add/2"><code class="inline">Explorer.Series.add/2</code></a>.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#-/2" translate="no">left - right</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Delegate to <a href="Explorer.Series.html#subtract/2"><code class="inline">Explorer.Series.subtract/2</code></a>.</p></div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
+          <a href="#//2" translate="no">left / right</a>
+
+        </div>
+
+          <div class="summary-synopsis"><p>Delegate to <a href="Explorer.Series.html#divide/2"><code class="inline">Explorer.Series.divide/2</code></a>.</p></div>
+
+      </div>
 
       <div class="summary-row">
         <div class="summary-signature">
@@ -239,6 +289,116 @@ you can fallback to the regular <code class="inline">_with</code> APIs.</p>
 Functions
     </h1>
     <div class="functions-list">
+<section class="detail" id="**/2">
+
+  <div class="detail-header">
+    <a href="#**/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">left ** right</h1>
+
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0-dev/lib/explorer/query.ex#L114" class="view-source" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Delegate to <a href="Explorer.Series.html#pow/2"><code class="inline">Explorer.Series.pow/2</code></a>.</p>
+  </section>
+</section>
+<section class="detail" id="*/2">
+
+  <div class="detail-header">
+    <a href="#*/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">left * right</h1>
+
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0-dev/lib/explorer/query.ex#L114" class="view-source" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Delegate to <a href="Explorer.Series.html#multiply/2"><code class="inline">Explorer.Series.multiply/2</code></a>.</p>
+  </section>
+</section>
+<section class="detail" id="+/2">
+
+  <div class="detail-header">
+    <a href="#+/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">left + right</h1>
+
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0-dev/lib/explorer/query.ex#L114" class="view-source" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Delegate to <a href="Explorer.Series.html#add/2"><code class="inline">Explorer.Series.add/2</code></a>.</p>
+  </section>
+</section>
+<section class="detail" id="-/2">
+
+  <div class="detail-header">
+    <a href="#-/2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">left - right</h1>
+
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0-dev/lib/explorer/query.ex#L114" class="view-source" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Delegate to <a href="Explorer.Series.html#subtract/2"><code class="inline">Explorer.Series.subtract/2</code></a>.</p>
+  </section>
+</section>
+<section class="detail" id="//2">
+
+  <div class="detail-header">
+    <a href="#//2" class="detail-link" title="Link to this function">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature" translate="no">left / right</h1>
+
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0-dev/lib/explorer/query.ex#L114" class="view-source" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+<p>Delegate to <a href="Explorer.Series.html#divide/2"><code class="inline">Explorer.Series.divide/2</code></a>.</p>
+  </section>
+</section>
 <section class="detail" id="!=/2">
 
   <div class="detail-header">
@@ -248,7 +408,7 @@ Functions
     </a>
     <h1 class="signature" translate="no">left != right</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0-dev/lib/explorer/query.ex#L92" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0-dev/lib/explorer/query.ex#L114" class="view-source" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -270,7 +430,7 @@ Functions
     </a>
     <h1 class="signature" translate="no">left &lt; right</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0-dev/lib/explorer/query.ex#L92" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0-dev/lib/explorer/query.ex#L114" class="view-source" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -292,7 +452,7 @@ Functions
     </a>
     <h1 class="signature" translate="no">left &lt;= right</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0-dev/lib/explorer/query.ex#L92" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0-dev/lib/explorer/query.ex#L114" class="view-source" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -314,7 +474,7 @@ Functions
     </a>
     <h1 class="signature" translate="no">left == right</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0-dev/lib/explorer/query.ex#L92" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0-dev/lib/explorer/query.ex#L114" class="view-source" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -336,7 +496,7 @@ Functions
     </a>
     <h1 class="signature" translate="no">left &gt; right</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0-dev/lib/explorer/query.ex#L92" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0-dev/lib/explorer/query.ex#L114" class="view-source" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -358,7 +518,7 @@ Functions
     </a>
     <h1 class="signature" translate="no">left &gt;= right</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0-dev/lib/explorer/query.ex#L92" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0-dev/lib/explorer/query.ex#L114" class="view-source" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
