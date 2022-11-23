@@ -12,7 +12,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-X7YVL3G2.js"></script>
-    <script src="dist/sidebar_items-075AFE78.js"></script>
+    <script src="dist/sidebar_items-C13E4B3B.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -210,7 +210,7 @@ Explorer
 
       <div class="summary-row">
         <div class="summary-signature">
-          <a href="#c:argsort/2" translate="no">argsort(s, reverse?)</a>
+          <a href="#c:argsort/3" translate="no">argsort(s, descending?, nils_last)</a>
 
         </div>
 
@@ -586,7 +586,7 @@ Explorer
 
       <div class="summary-row">
         <div class="summary-signature">
-          <a href="#c:sort/2" translate="no">sort(s, reverse?)</a>
+          <a href="#c:sort/3" translate="no">sort(s, descending?, nils_last)</a>
 
         </div>
 
@@ -1014,14 +1014,14 @@ Callbacks
 
   </section>
 </section>
-<section class="detail" id="c:argsort/2">
+<section class="detail" id="c:argsort/3">
 
   <div class="detail-header">
-    <a href="#c:argsort/2" class="detail-link" title="Link to this callback">
+    <a href="#c:argsort/3" class="detail-link" title="Link to this callback">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this callback</span>
     </a>
-    <h1 class="signature" translate="no">argsort(s, reverse?)</h1>
+    <h1 class="signature" translate="no">argsort(s, descending?, nils_last)</h1>
 
       <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0-dev/lib/explorer/backend/series.ex#L95" class="view-source" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
@@ -1035,7 +1035,7 @@ Callbacks
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@callback</span> argsort(<a href="#t:s/0">s</a>(), reverse? :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()) :: <a href="#t:s/0">s</a>()</pre>
+          <pre translate="no"><span class="attribute">@callback</span> argsort(<a href="#t:s/0">s</a>(), descending? :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>(), nils_last :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()) :: <a href="#t:s/0">s</a>()</pre>
 
       </div>
 
@@ -2341,14 +2341,14 @@ Callbacks
 
   </section>
 </section>
-<section class="detail" id="c:sort/2">
+<section class="detail" id="c:sort/3">
 
   <div class="detail-header">
-    <a href="#c:sort/2" class="detail-link" title="Link to this callback">
+    <a href="#c:sort/3" class="detail-link" title="Link to this callback">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this callback</span>
     </a>
-    <h1 class="signature" translate="no">sort(s, reverse?)</h1>
+    <h1 class="signature" translate="no">sort(s, descending?, nils_last)</h1>
 
       <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0-dev/lib/explorer/backend/series.ex#L94" class="view-source" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
@@ -2362,7 +2362,7 @@ Callbacks
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@callback</span> sort(<a href="#t:s/0">s</a>(), reverse? :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()) :: <a href="#t:s/0">s</a>()</pre>
+          <pre translate="no"><span class="attribute">@callback</span> sort(<a href="#t:s/0">s</a>(), descending? :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>(), nils_last :: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">boolean</a>()) :: <a href="#t:s/0">s</a>()</pre>
 
       </div>
 
