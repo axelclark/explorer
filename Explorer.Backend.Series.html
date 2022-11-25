@@ -12,7 +12,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-X7YVL3G2.js"></script>
-    <script src="dist/sidebar_items-BD736D8D.js"></script>
+    <script src="dist/sidebar_items-DF865F7D.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -234,6 +234,14 @@ Explorer
 
       <div class="summary-row">
         <div class="summary-signature">
+          <a href="#c:bintype/1" translate="no">bintype(s)</a>
+
+        </div>
+
+      </div>
+
+      <div class="summary-row">
+        <div class="summary-signature">
           <a href="#c:cast/2" translate="no">cast(s, dtype)</a>
 
         </div>
@@ -379,14 +387,6 @@ Explorer
       <div class="summary-row">
         <div class="summary-signature">
           <a href="#c:inspect/2" translate="no">inspect(s, opts)</a>
-
-        </div>
-
-      </div>
-
-      <div class="summary-row">
-        <div class="summary-signature">
-          <a href="#c:iotype/1" translate="no">iotype(s)</a>
 
         </div>
 
@@ -1098,6 +1098,34 @@ Callbacks
 
   </section>
 </section>
+<section class="detail" id="c:bintype/1">
+
+  <div class="detail-header">
+    <a href="#c:bintype/1" class="detail-link" title="Link to this callback">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this callback</span>
+    </a>
+    <h1 class="signature" translate="no">bintype(s)</h1>
+
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0-dev/lib/explorer/backend/series.ex#L28" class="view-source" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@callback</span> bintype(<a href="#t:s/0">s</a>()) :: :uft8 | {:s | :u | :f, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()}</pre>
+
+      </div>
+
+
+  </section>
+</section>
 <section class="detail" id="c:cast/2">
 
   <div class="detail-header">
@@ -1627,34 +1655,6 @@ Callbacks
       <div class="specs">
 
           <pre translate="no"><span class="attribute">@callback</span> inspect(<a href="#t:s/0">s</a>(), opts :: <a href="https://hexdocs.pm/elixir/Inspect.Opts.html#t:t/0">Inspect.Opts.t</a>()) :: <a href="https://hexdocs.pm/elixir/Inspect.Algebra.html#t:t/0">Inspect.Algebra.t</a>()</pre>
-
-      </div>
-
-
-  </section>
-</section>
-<section class="detail" id="c:iotype/1">
-
-  <div class="detail-header">
-    <a href="#c:iotype/1" class="detail-link" title="Link to this callback">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this callback</span>
-    </a>
-    <h1 class="signature" translate="no">iotype(s)</h1>
-
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0-dev/lib/explorer/backend/series.ex#L28" class="view-source" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@callback</span> iotype(<a href="#t:s/0">s</a>()) :: :uft8 | {:s | :u | :f, <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()}</pre>
 
       </div>
 
