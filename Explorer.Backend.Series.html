@@ -13,7 +13,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-IV5W3OL2.js"></script>
-    <script src="dist/sidebar_items-20BDEA01.js"></script>
+    <script src="dist/sidebar_items-EEBCA3E0.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -217,6 +217,22 @@ Explorer
 
     <div class="summary-row">
       <div class="summary-signature">
+        <a href="#c:at/2" translate="no">at(s, idx)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#c:at_every/2" translate="no">at_every(s, integer)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
         <a href="#c:binary_and/2" translate="no">binary_and(s, s)</a>
 
       </div>
@@ -322,14 +338,6 @@ Explorer
     <div class="summary-row">
       <div class="summary-signature">
         <a href="#c:equal/2" translate="no">equal(arg1, arg2)</a>
-
-      </div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#c:fetch!/2" translate="no">fetch!(s, idx)</a>
 
       </div>
 
@@ -634,14 +642,6 @@ Explorer
     <div class="summary-row">
       <div class="summary-signature">
         <a href="#c:tail/2" translate="no">tail(s, n)</a>
-
-      </div>
-
-    </div>
-
-    <div class="summary-row">
-      <div class="summary-signature">
-        <a href="#c:take_every/2" translate="no">take_every(s, integer)</a>
 
       </div>
 
@@ -1056,6 +1056,62 @@ Callbacks
 
   </section>
 </section>
+<section class="detail" id="c:at/2">
+
+  <div class="detail-header">
+    <a href="#c:at/2" class="detail-link" title="Link to this callback">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this callback</span>
+    </a>
+    <h1 class="signature" translate="no">at(s, idx)</h1>
+
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0-dev/lib/explorer/backend/series.ex#L36" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@callback</span> at(<a href="#t:s/0">s</a>(), idx :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>()) :: <a href="#t:s/0">s</a>()</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="c:at_every/2">
+
+  <div class="detail-header">
+    <a href="#c:at_every/2" class="detail-link" title="Link to this callback">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this callback</span>
+    </a>
+    <h1 class="signature" translate="no">at_every(s, integer)</h1>
+
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0-dev/lib/explorer/backend/series.ex#L37" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@callback</span> at_every(<a href="#t:s/0">s</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>()) :: <a href="#t:s/0">s</a>()</pre>
+
+      </div>
+
+
+  </section>
+</section>
 <section class="detail" id="c:binary_and/2">
 
   <div class="detail-header">
@@ -1448,34 +1504,6 @@ Callbacks
 
   </section>
 </section>
-<section class="detail" id="c:fetch!/2">
-
-  <div class="detail-header">
-    <a href="#c:fetch!/2" class="detail-link" title="Link to this callback">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this callback</span>
-    </a>
-    <h1 class="signature" translate="no">fetch!(s, idx)</h1>
-
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0-dev/lib/explorer/backend/series.ex#L40" class="icon-action" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@callback</span> fetch!(<a href="#t:s/0">s</a>(), idx :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>()) :: <a href="#t:s/0">s</a>()</pre>
-
-      </div>
-
-
-  </section>
-</section>
 <section class="detail" id="c:fill_missing/2">
 
   <div class="detail-header">
@@ -1852,7 +1880,7 @@ Callbacks
     </a>
     <h1 class="signature" translate="no">mask(s, mask)</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0-dev/lib/explorer/backend/series.ex#L37" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0-dev/lib/explorer/backend/series.ex#L38" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -2364,7 +2392,7 @@ Callbacks
     </a>
     <h1 class="signature" translate="no">slice(s, indices)</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0-dev/lib/explorer/backend/series.ex#L38" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0-dev/lib/explorer/backend/series.ex#L39" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -2392,7 +2420,7 @@ Callbacks
     </a>
     <h1 class="signature" translate="no">slice(s, offset, length)</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0-dev/lib/explorer/backend/series.ex#L39" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0-dev/lib/explorer/backend/series.ex#L40" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -2545,34 +2573,6 @@ Callbacks
       <div class="specs">
 
           <pre translate="no"><span class="attribute">@callback</span> tail(<a href="#t:s/0">s</a>(), n :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>()) :: <a href="#t:s/0">s</a>()</pre>
-
-      </div>
-
-
-  </section>
-</section>
-<section class="detail" id="c:take_every/2">
-
-  <div class="detail-header">
-    <a href="#c:take_every/2" class="detail-link" title="Link to this callback">
-      <i class="ri-link-m" aria-hidden="true"></i>
-      <span class="sr-only">Link to this callback</span>
-    </a>
-    <h1 class="signature" translate="no">take_every(s, integer)</h1>
-
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0-dev/lib/explorer/backend/series.ex#L36" class="icon-action" rel="help" title="View Source">
-       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
-       <span class="sr-only">View Source</span>
-     </a>
-
-
-  </div>
-
-  <section class="docstring">
-
-      <div class="specs">
-
-          <pre translate="no"><span class="attribute">@callback</span> take_every(<a href="#t:s/0">s</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>()) :: <a href="#t:s/0">s</a>()</pre>
 
       </div>
 
