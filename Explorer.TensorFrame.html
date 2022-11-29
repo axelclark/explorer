@@ -5,9 +5,9 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.29.1">
-    <meta name="project" content="Explorer v0.4.0">
+    <meta name="project" content="Explorer v0.5.0-dev">
 
-    <title>Explorer.TensorFrame — Explorer v0.4.0</title>
+    <title>Explorer.TensorFrame — Explorer v0.5.0-dev</title>
     <link rel="stylesheet" href="dist/html-elixir-V2ETBPMB.css" />
 
 
@@ -72,7 +72,7 @@
 Explorer
       </a>
       <strong class="sidebar-projectVersion" translate="no">
-        v0.4.0
+        v0.5.0-dev
       </strong>
     </div>
     <ul class="sidebar-listNav">
@@ -100,26 +100,26 @@ Explorer
 </button>
 
 
-    <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0/lib/explorer/tensor_frame.ex#L6" title="View Source" class="icon-action" rel="help">
+    <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/tensor_frame.ex#L6" title="View Source" class="icon-action" rel="help">
       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
       <span class="sr-only">View Source</span>
     </a>
 
   <span translate="no">Explorer.TensorFrame</span> 
-  <small class="app-vsn" translate="no">(Explorer v0.4.0)</small>
+  <small class="app-vsn" translate="no">(Explorer v0.5.0-dev)</small>
 
 </h1>
 
 
   <section id="moduledoc">
 <p>TensorFrame is a representation of <a href="Explorer.DataFrame.html"><code class="inline">Explorer.DataFrame</code></a>
-that is designed to work inside Nx's <code class="inline">defn</code> expressions.</p><p>For example, imagine the following <code class="inline">defn</code>:</p><pre><code class="makeup elixir" translate="no"><span class="kd">defn</span><span class="w"> </span><span class="nf">add_columns</span><span class="p" data-group-id="0215147336-1">(</span><span class="n">tf</span><span class="p" data-group-id="0215147336-1">)</span><span class="w"> </span><span class="k" data-group-id="0215147336-2">do</span><span class="w">
-  </span><span class="n">tf</span><span class="p" data-group-id="0215147336-3">[</span><span class="ss">:a</span><span class="p" data-group-id="0215147336-3">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">tf</span><span class="p" data-group-id="0215147336-4">[</span><span class="ss">:b</span><span class="p" data-group-id="0215147336-4">]</span><span class="w">
-</span><span class="k" data-group-id="0215147336-2">end</span></code></pre><p>We can now pass a DataFrame as argument:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">add_columns</span><span class="p" data-group-id="4150769922-1">(</span><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="4150769922-2">(</span><span class="ss">a</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4150769922-3">[</span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p" data-group-id="4150769922-3">]</span><span class="p">,</span><span class="w"> </span><span class="ss">b</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4150769922-4">[</span><span class="mi">21</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p" data-group-id="4150769922-4">]</span><span class="p" data-group-id="4150769922-2">)</span><span class="p" data-group-id="4150769922-1">)</span><span class="w">
-</span><span class="p" data-group-id="4150769922-5">#</span><span class="nc" data-group-id="4150769922-5">Nx.Tensor</span><span class="p" data-group-id="4150769922-5">&lt;</span><span class="w">
-  </span><span class="n">s64</span><span class="p" data-group-id="4150769922-6">[</span><span class="mi">2</span><span class="p" data-group-id="4150769922-6">]</span><span class="w">
-  </span><span class="p" data-group-id="4150769922-7">[</span><span class="mi">32</span><span class="p">,</span><span class="w"> </span><span class="mi">34</span><span class="p" data-group-id="4150769922-7">]</span><span class="w">
-</span><span class="p" data-group-id="4150769922-5">&gt;</span></code></pre><p>Passing an <a href="Explorer.DataFrame.html"><code class="inline">Explorer.DataFrame</code></a> to a <code class="inline">defn</code> will automatically
+that is designed to work inside Nx's <code class="inline">defn</code> expressions.</p><p>For example, imagine the following <code class="inline">defn</code>:</p><pre><code class="makeup elixir" translate="no"><span class="kd">defn</span><span class="w"> </span><span class="nf">add_columns</span><span class="p" data-group-id="2124567764-1">(</span><span class="n">tf</span><span class="p" data-group-id="2124567764-1">)</span><span class="w"> </span><span class="k" data-group-id="2124567764-2">do</span><span class="w">
+  </span><span class="n">tf</span><span class="p" data-group-id="2124567764-3">[</span><span class="ss">:a</span><span class="p" data-group-id="2124567764-3">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">tf</span><span class="p" data-group-id="2124567764-4">[</span><span class="ss">:b</span><span class="p" data-group-id="2124567764-4">]</span><span class="w">
+</span><span class="k" data-group-id="2124567764-2">end</span></code></pre><p>We can now pass a DataFrame as argument:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">add_columns</span><span class="p" data-group-id="4312914218-1">(</span><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="4312914218-2">(</span><span class="ss">a</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4312914218-3">[</span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p" data-group-id="4312914218-3">]</span><span class="p">,</span><span class="w"> </span><span class="ss">b</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4312914218-4">[</span><span class="mi">21</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p" data-group-id="4312914218-4">]</span><span class="p" data-group-id="4312914218-2">)</span><span class="p" data-group-id="4312914218-1">)</span><span class="w">
+</span><span class="p" data-group-id="4312914218-5">#</span><span class="nc" data-group-id="4312914218-5">Nx.Tensor</span><span class="p" data-group-id="4312914218-5">&lt;</span><span class="w">
+  </span><span class="n">s64</span><span class="p" data-group-id="4312914218-6">[</span><span class="mi">2</span><span class="p" data-group-id="4312914218-6">]</span><span class="w">
+  </span><span class="p" data-group-id="4312914218-7">[</span><span class="mi">32</span><span class="p">,</span><span class="w"> </span><span class="mi">34</span><span class="p" data-group-id="4312914218-7">]</span><span class="w">
+</span><span class="p" data-group-id="4312914218-5">&gt;</span></code></pre><p>Passing an <a href="Explorer.DataFrame.html"><code class="inline">Explorer.DataFrame</code></a> to a <code class="inline">defn</code> will automatically
 convert it to a TensorFrame. The TensorFrame will lazily
 build tensors out of the used dataframe fields.</p><h2 id="module-warning-returning-tensorframes" class="section-heading">
   <a href="#module-warning-returning-tensorframes" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
@@ -134,14 +134,14 @@ modified during the computation. For example, in the example
 above we used <a href="https://hexdocs.pm/nx/0.4.0/Nx.html"><code class="inline">Nx</code></a> to add two columns, if you want to
 put the result of the computation back into a DataFrame,
 you can use <a href="Explorer.DataFrame.html#put/4"><code class="inline">Explorer.DataFrame.put/4</code></a>, which also accepts
-tensors:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="0892461582-1">(</span><span class="ss">a</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="0892461582-2">[</span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p" data-group-id="0892461582-2">]</span><span class="p">,</span><span class="w"> </span><span class="ss">b</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="0892461582-3">[</span><span class="mi">21</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p" data-group-id="0892461582-3">]</span><span class="p" data-group-id="0892461582-1">)</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">put</span><span class="p" data-group-id="0892461582-4">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;result&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">add_columns</span><span class="p" data-group-id="0892461582-5">(</span><span class="n">df</span><span class="p" data-group-id="0892461582-5">)</span><span class="p" data-group-id="0892461582-4">)</span><span class="w">
-</span><span class="p" data-group-id="0892461582-6">#</span><span class="nc" data-group-id="0892461582-6">Explorer.DataFrame</span><span class="p" data-group-id="0892461582-6">&lt;</span><span class="w">
-  </span><span class="nc">Polars</span><span class="p" data-group-id="0892461582-7">[</span><span class="mi">2</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="mi">3</span><span class="p" data-group-id="0892461582-7">]</span><span class="w">
-  </span><span class="n">a</span><span class="w"> </span><span class="n">integer</span><span class="w"> </span><span class="p" data-group-id="0892461582-8">[</span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p" data-group-id="0892461582-8">]</span><span class="w">
-  </span><span class="n">b</span><span class="w"> </span><span class="n">integer</span><span class="w"> </span><span class="p" data-group-id="0892461582-9">[</span><span class="mi">21</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p" data-group-id="0892461582-9">]</span><span class="w">
-  </span><span class="n">result</span><span class="w"> </span><span class="n">integer</span><span class="w"> </span><span class="p" data-group-id="0892461582-10">[</span><span class="mi">32</span><span class="p">,</span><span class="w"> </span><span class="mi">34</span><span class="p" data-group-id="0892461582-10">]</span><span class="w">
-</span><span class="p" data-group-id="0892461582-6">&gt;</span></code></pre><p>One benefit of using <a href="Explorer.DataFrame.html#put/4"><code class="inline">Explorer.DataFrame.put/4</code></a> is that it will
+tensors:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="8467103555-1">(</span><span class="ss">a</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="8467103555-2">[</span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p" data-group-id="8467103555-2">]</span><span class="p">,</span><span class="w"> </span><span class="ss">b</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="8467103555-3">[</span><span class="mi">21</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p" data-group-id="8467103555-3">]</span><span class="p" data-group-id="8467103555-1">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">put</span><span class="p" data-group-id="8467103555-4">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;result&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">add_columns</span><span class="p" data-group-id="8467103555-5">(</span><span class="n">df</span><span class="p" data-group-id="8467103555-5">)</span><span class="p" data-group-id="8467103555-4">)</span><span class="w">
+</span><span class="p" data-group-id="8467103555-6">#</span><span class="nc" data-group-id="8467103555-6">Explorer.DataFrame</span><span class="p" data-group-id="8467103555-6">&lt;</span><span class="w">
+  </span><span class="nc">Polars</span><span class="p" data-group-id="8467103555-7">[</span><span class="mi">2</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="mi">3</span><span class="p" data-group-id="8467103555-7">]</span><span class="w">
+  </span><span class="n">a</span><span class="w"> </span><span class="n">integer</span><span class="w"> </span><span class="p" data-group-id="8467103555-8">[</span><span class="mi">11</span><span class="p">,</span><span class="w"> </span><span class="mi">12</span><span class="p" data-group-id="8467103555-8">]</span><span class="w">
+  </span><span class="n">b</span><span class="w"> </span><span class="n">integer</span><span class="w"> </span><span class="p" data-group-id="8467103555-9">[</span><span class="mi">21</span><span class="p">,</span><span class="w"> </span><span class="mi">22</span><span class="p" data-group-id="8467103555-9">]</span><span class="w">
+  </span><span class="n">result</span><span class="w"> </span><span class="n">integer</span><span class="w"> </span><span class="p" data-group-id="8467103555-10">[</span><span class="mi">32</span><span class="p">,</span><span class="w"> </span><span class="mi">34</span><span class="p" data-group-id="8467103555-10">]</span><span class="w">
+</span><span class="p" data-group-id="8467103555-6">&gt;</span></code></pre><p>One benefit of using <a href="Explorer.DataFrame.html#put/4"><code class="inline">Explorer.DataFrame.put/4</code></a> is that it will
 preserve the type of the column if one already exists. Alternatively,
 use <a href="Explorer.Series.html#from_tensor/1"><code class="inline">Explorer.Series.from_tensor/1</code></a> to explicitly convert a tensor
 back to a series.</p><h2 id="module-supported-dtypes" class="section-heading">
@@ -225,7 +225,7 @@ Types
     </a>
     <h1 class="signature" translate="no">t()</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0/lib/explorer/tensor_frame.ex#L69" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/tensor_frame.ex#L69" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -266,7 +266,7 @@ Functions
     </a>
     <h1 class="signature" translate="no">pull(tf, name)</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0/lib/explorer/tensor_frame.ex#L94" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/tensor_frame.ex#L94" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -283,7 +283,7 @@ a tensor.</p><h2 id="pull/2-examples" class="section-heading">
   </a>
   Examples
 </h2>
-<pre><code class="makeup elixir" translate="no"><span class="nc">Explorer.TensorFrame</span><span class="o">.</span><span class="n">pull</span><span class="p" data-group-id="6661671774-1">(</span><span class="n">tf</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;some_column&quot;</span><span class="p" data-group-id="6661671774-1">)</span></code></pre>
+<pre><code class="makeup elixir" translate="no"><span class="nc">Explorer.TensorFrame</span><span class="o">.</span><span class="n">pull</span><span class="p" data-group-id="9700602954-1">(</span><span class="n">tf</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;some_column&quot;</span><span class="p" data-group-id="9700602954-1">)</span></code></pre>
   </section>
 </section>
 <section class="detail" id="put/3">
@@ -295,7 +295,7 @@ a tensor.</p><h2 id="pull/2-examples" class="section-heading">
     </a>
     <h1 class="signature" translate="no">put(tf, name, tensor)</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.4.0/lib/explorer/tensor_frame.ex#L108" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/tensor_frame.ex#L108" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -311,7 +311,7 @@ a tensor.</p><h2 id="pull/2-examples" class="section-heading">
   </a>
   Examples
 </h2>
-<pre><code class="makeup elixir" translate="no"><span class="nc">Explorer.TensorFrame</span><span class="o">.</span><span class="n">put</span><span class="p" data-group-id="3416430306-1">(</span><span class="n">tf</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;result&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">some_tensor</span><span class="p" data-group-id="3416430306-1">)</span></code></pre>
+<pre><code class="makeup elixir" translate="no"><span class="nc">Explorer.TensorFrame</span><span class="o">.</span><span class="n">put</span><span class="p" data-group-id="7639023589-1">(</span><span class="n">tf</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;result&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">some_tensor</span><span class="p" data-group-id="7639023589-1">)</span></code></pre>
   </section>
 </section>
 
@@ -322,11 +322,11 @@ a tensor.</p><h2 id="pull/2-examples" class="section-heading">
         <p>
 
             <span class="line">
-              <a href="https://hex.pm/packages/explorer/0.4.0" class="footer-hex-package">Hex Package</a>
+              <a href="https://hex.pm/packages/explorer/0.5.0-dev" class="footer-hex-package">Hex Package</a>
 
-              <a href="https://preview.hex.pm/preview/explorer/0.4.0">Hex Preview</a>
+              <a href="https://preview.hex.pm/preview/explorer/0.5.0-dev">Hex Preview</a>
 
-                (<a href="https://preview.hex.pm/preview/explorer/0.4.0/show/lib/explorer/tensor_frame.ex">current file</a>)
+                (<a href="https://preview.hex.pm/preview/explorer/0.5.0-dev/show/lib/explorer/tensor_frame.ex">current file</a>)
 
             </span>
 
