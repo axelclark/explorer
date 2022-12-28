@@ -13,7 +13,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-IV5W3OL2.js"></script>
-    <script src="dist/sidebar_items-D025ED18.js"></script>
+    <script src="dist/sidebar_items-C7C09030.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -273,6 +273,14 @@ Explorer
 
     <div class="summary-row">
       <div class="summary-signature">
+        <a href="#c:ceil/1" translate="no">ceil(s)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
         <a href="#c:coalesce/2" translate="no">coalesce(s, s)</a>
 
       </div>
@@ -378,6 +386,14 @@ Explorer
     <div class="summary-row">
       <div class="summary-signature">
         <a href="#c:first/1" translate="no">first(s)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#c:floor/1" translate="no">floor(s)</a>
 
       </div>
 
@@ -618,6 +634,14 @@ Explorer
     <div class="summary-row">
       <div class="summary-signature">
         <a href="#c:reverse/1" translate="no">reverse(s)</a>
+
+      </div>
+
+    </div>
+
+    <div class="summary-row">
+      <div class="summary-signature">
+        <a href="#c:round/2" translate="no">round(s, decimals)</a>
 
       </div>
 
@@ -1041,7 +1065,7 @@ Types
     </a>
     <h1 class="signature" translate="no">window_option()</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L117" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L122" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -1141,7 +1165,7 @@ Callbacks
     </a>
     <h1 class="signature" translate="no">argsort(s, descending?, nils_last)</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L105" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L110" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -1356,6 +1380,34 @@ Callbacks
 
   </section>
 </section>
+<section class="detail" id="c:ceil/1">
+
+  <div class="detail-header">
+    <a href="#c:ceil/1" class="detail-link" title="Link to this callback">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this callback</span>
+    </a>
+    <h1 class="signature" translate="no">ceil(s)</h1>
+
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L103" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@callback</span> ceil(<a href="#t:s/0">s</a>()) :: <a href="#t:s/0">s</a>()</pre>
+
+      </div>
+
+
+  </section>
+</section>
 <section class="detail" id="c:coalesce/2">
 
   <div class="detail-header">
@@ -1421,7 +1473,7 @@ Callbacks
     </a>
     <h1 class="signature" translate="no">contains(s, t)</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L146" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L151" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -1561,7 +1613,7 @@ Callbacks
     </a>
     <h1 class="signature" translate="no">distinct(s)</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L110" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L115" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -1617,7 +1669,7 @@ Callbacks
     </a>
     <h1 class="signature" translate="no">downcase(s)</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L148" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L153" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -1701,7 +1753,7 @@ Callbacks
     </a>
     <h1 class="signature" translate="no">fill_missing(s, strategy)</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L132" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L137" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -1751,6 +1803,34 @@ Callbacks
 
   </section>
 </section>
+<section class="detail" id="c:floor/1">
+
+  <div class="detail-header">
+    <a href="#c:floor/1" class="detail-link" title="Link to this callback">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this callback</span>
+    </a>
+    <h1 class="signature" translate="no">floor(s)</h1>
+
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L102" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@callback</span> floor(<a href="#t:s/0">s</a>()) :: <a href="#t:s/0">s</a>()</pre>
+
+      </div>
+
+
+  </section>
+</section>
 <section class="detail" id="c:frequencies/1">
 
   <div class="detail-header">
@@ -1760,7 +1840,7 @@ Callbacks
     </a>
     <h1 class="signature" translate="no">frequencies(s)</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L113" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L118" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -2040,7 +2120,7 @@ Callbacks
     </a>
     <h1 class="signature" translate="no">is_nil(s)</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L133" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L138" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -2068,7 +2148,7 @@ Callbacks
     </a>
     <h1 class="signature" translate="no">is_not_nil(s)</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L134" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L139" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -2348,7 +2428,7 @@ Callbacks
     </a>
     <h1 class="signature" translate="no">n_distinct(s)</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L112" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L117" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -2579,7 +2659,7 @@ Callbacks
     </a>
     <h1 class="signature" translate="no">reverse(s)</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L106" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L111" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -2592,6 +2672,34 @@ Callbacks
       <div class="specs">
 
           <pre translate="no"><span class="attribute">@callback</span> reverse(<a href="#t:s/0">s</a>()) :: <a href="#t:s/0">s</a>()</pre>
+
+      </div>
+
+
+  </section>
+</section>
+<section class="detail" id="c:round/2">
+
+  <div class="detail-header">
+    <a href="#c:round/2" class="detail-link" title="Link to this callback">
+      <i class="ri-link-m" aria-hidden="true"></i>
+      <span class="sr-only">Link to this callback</span>
+    </a>
+    <h1 class="signature" translate="no">round(s, decimals)</h1>
+
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L101" class="icon-action" rel="help" title="View Source">
+       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <div class="specs">
+
+          <pre translate="no"><span class="attribute">@callback</span> round(<a href="#t:s/0">s</a>(), decimals :: <a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">non_neg_integer</a>()) :: <a href="#t:s/0">s</a>()</pre>
 
       </div>
 
@@ -2776,7 +2884,7 @@ Callbacks
     </a>
     <h1 class="signature" translate="no">sort(s, descending?, nils_last)</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L104" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L109" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -2972,7 +3080,7 @@ Callbacks
     </a>
     <h1 class="signature" translate="no">transform(s, function)</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L138" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L143" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -3000,7 +3108,7 @@ Callbacks
     </a>
     <h1 class="signature" translate="no">trim(s)</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L149" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L154" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -3028,7 +3136,7 @@ Callbacks
     </a>
     <h1 class="signature" translate="no">trim_leading(s)</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L150" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L155" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -3056,7 +3164,7 @@ Callbacks
     </a>
     <h1 class="signature" translate="no">trim_trailing(s)</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L151" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L156" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -3084,7 +3192,7 @@ Callbacks
     </a>
     <h1 class="signature" translate="no">unary_not(s)</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L142" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L147" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -3112,7 +3220,7 @@ Callbacks
     </a>
     <h1 class="signature" translate="no">unordered_distinct(s)</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L111" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L116" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -3140,7 +3248,7 @@ Callbacks
     </a>
     <h1 class="signature" translate="no">upcase(s)</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L147" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L152" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -3196,7 +3304,7 @@ Callbacks
     </a>
     <h1 class="signature" translate="no">window_max(s, window_size, list)</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L124" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L129" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -3224,7 +3332,7 @@ Callbacks
     </a>
     <h1 class="signature" translate="no">window_mean(s, window_size, list)</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L125" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L130" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -3252,7 +3360,7 @@ Callbacks
     </a>
     <h1 class="signature" translate="no">window_min(s, window_size, list)</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L123" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L128" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -3280,7 +3388,7 @@ Callbacks
     </a>
     <h1 class="signature" translate="no">window_sum(s, window_size, list)</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L122" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L127" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -3323,7 +3431,7 @@ Functions
     </a>
     <h1 class="signature" translate="no">inspect(series, backend, n_rows, inspect_opts, opts \\ [])</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L168" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L173" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -3345,7 +3453,7 @@ Functions
     </a>
     <h1 class="signature" translate="no">new(data, dtype)</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L158" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/series.ex#L163" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
