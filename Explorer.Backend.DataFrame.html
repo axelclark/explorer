@@ -13,7 +13,7 @@
 
     <script src="dist/handlebars.runtime-NWIB6V2M.js"></script>
     <script src="dist/handlebars.templates-IV5W3OL2.js"></script>
-    <script src="dist/sidebar_items-075775C9.js"></script>
+    <script src="dist/sidebar_items-6B084949.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -421,7 +421,7 @@ Explorer
 
     <div class="summary-row">
       <div class="summary-signature">
-        <a href="#c:from_tabular/1" translate="no">from_tabular(t)</a>
+        <a href="#c:from_tabular/2" translate="no">from_tabular(t, dtypes)</a>
 
       </div>
 
@@ -1732,14 +1732,14 @@ Callbacks
 
   </section>
 </section>
-<section class="detail" id="c:from_tabular/1">
+<section class="detail" id="c:from_tabular/2">
 
   <div class="detail-header">
-    <a href="#c:from_tabular/1" class="detail-link" title="Link to this callback">
+    <a href="#c:from_tabular/2" class="detail-link" title="Link to this callback">
       <i class="ri-link-m" aria-hidden="true"></i>
       <span class="sr-only">Link to this callback</span>
     </a>
-    <h1 class="signature" translate="no">from_tabular(t)</h1>
+    <h1 class="signature" translate="no">from_tabular(t, dtypes)</h1>
 
       <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0-dev/lib/explorer/backend/data_frame.ex#L123" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
@@ -1753,7 +1753,7 @@ Callbacks
 
       <div class="specs">
 
-          <pre translate="no"><span class="attribute">@callback</span> from_tabular(<a href="https://hexdocs.pm/table/0.1.2/Table.Reader.html#t:t/0">Table.Reader.t</a>()) :: <a href="#t:df/0">df</a>()</pre>
+          <pre translate="no"><span class="attribute">@callback</span> from_tabular(<a href="https://hexdocs.pm/table/0.1.2/Table.Reader.html#t:t/0">Table.Reader.t</a>(), dtypes :: [{<a href="#t:column_name/0">column_name</a>(), <a href="#t:dtype/0">dtype</a>()}]) :: <a href="#t:df/0">df</a>()</pre>
 
       </div>
 
