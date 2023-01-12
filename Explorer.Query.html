@@ -5,9 +5,9 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="ExDoc v0.29.1">
-    <meta name="project" content="Explorer v0.5.0">
+    <meta name="project" content="Explorer v0.6.0-dev">
 
-    <title>Explorer.Query — Explorer v0.5.0</title>
+    <title>Explorer.Query — Explorer v0.6.0-dev</title>
     <link rel="stylesheet" href="dist/html-elixir-V2ETBPMB.css" />
 
 
@@ -72,7 +72,7 @@
 Explorer
       </a>
       <strong class="sidebar-projectVersion" translate="no">
-        v0.5.0
+        v0.6.0-dev
       </strong>
     </div>
     <ul class="sidebar-listNav">
@@ -100,13 +100,13 @@ Explorer
 </button>
 
 
-    <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0/lib/explorer/query.ex#L1" title="View Source" class="icon-action" rel="help">
+    <a href="https://github.com/elixir-nx/explorer/blob/v0.6.0-dev/lib/explorer/query.ex#L1" title="View Source" class="icon-action" rel="help">
       <i class="ri-code-s-slash-line" aria-hidden="true"></i>
       <span class="sr-only">View Source</span>
     </a>
 
   <span translate="no">Explorer.Query</span> 
-  <small class="app-vsn" translate="no">(Explorer v0.5.0)</small>
+  <small class="app-vsn" translate="no">(Explorer v0.6.0-dev)</small>
 
 </h1>
 
@@ -115,19 +115,19 @@ Explorer
 <p>High-level query for Explorer.</p><p>Queries convert regular Elixir code which compile to efficient
 dataframes operations. Inside a query, only the limited set of
 Series operations are available and identifiers, such as <code class="inline">strs</code>
-and <code class="inline">nums</code>, represent dataframe column names:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="5679820340-1">(</span><span class="ss">strs</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="5679820340-2">[</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="p" data-group-id="5679820340-2">]</span><span class="p">,</span><span class="w"> </span><span class="ss">nums</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="5679820340-3">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p" data-group-id="5679820340-3">]</span><span class="p" data-group-id="5679820340-1">)</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">filter</span><span class="p" data-group-id="5679820340-4">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">nums</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="5679820340-4">)</span><span class="w">
-</span><span class="p" data-group-id="5679820340-5">#</span><span class="nc" data-group-id="5679820340-5">Explorer.DataFrame</span><span class="p" data-group-id="5679820340-5">&lt;</span><span class="w">
-  </span><span class="nc">Polars</span><span class="p" data-group-id="5679820340-6">[</span><span class="mi">1</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="5679820340-6">]</span><span class="w">
-  </span><span class="n">strs</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="p" data-group-id="5679820340-7">[</span><span class="s">&quot;c&quot;</span><span class="p" data-group-id="5679820340-7">]</span><span class="w">
-  </span><span class="n">nums</span><span class="w"> </span><span class="n">integer</span><span class="w"> </span><span class="p" data-group-id="5679820340-8">[</span><span class="mi">3</span><span class="p" data-group-id="5679820340-8">]</span><span class="w">
-</span><span class="p" data-group-id="5679820340-5">&gt;</span></code></pre><p>If a column has unusual format, you can either rename it before-hand,
-or use <a href="#col/1"><code class="inline">col/1</code></a> inside queries:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="2773541723-1">(</span><span class="ss">&quot;unusual nums&quot;</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2773541723-2">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p" data-group-id="2773541723-2">]</span><span class="p" data-group-id="2773541723-1">)</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">filter</span><span class="p" data-group-id="2773541723-3">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="p" data-group-id="2773541723-4">(</span><span class="s">&quot;unusual nums&quot;</span><span class="p" data-group-id="2773541723-4">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="2773541723-3">)</span><span class="w">
-</span><span class="p" data-group-id="2773541723-5">#</span><span class="nc" data-group-id="2773541723-5">Explorer.DataFrame</span><span class="p" data-group-id="2773541723-5">&lt;</span><span class="w">
-  </span><span class="nc">Polars</span><span class="p" data-group-id="2773541723-6">[</span><span class="mi">1</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="2773541723-6">]</span><span class="w">
-  </span><span class="n">unusual</span><span class="w"> </span><span class="n">nums</span><span class="w"> </span><span class="n">integer</span><span class="w"> </span><span class="p" data-group-id="2773541723-7">[</span><span class="mi">3</span><span class="p" data-group-id="2773541723-7">]</span><span class="w">
-</span><span class="p" data-group-id="2773541723-5">&gt;</span></code></pre><p>All operations from <a href="Explorer.Series.html"><code class="inline">Explorer.Series</code></a> are imported inside queries.
+and <code class="inline">nums</code>, represent dataframe column names:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="8289016489-1">(</span><span class="ss">strs</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="8289016489-2">[</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="p" data-group-id="8289016489-2">]</span><span class="p">,</span><span class="w"> </span><span class="ss">nums</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="8289016489-3">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p" data-group-id="8289016489-3">]</span><span class="p" data-group-id="8289016489-1">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">filter</span><span class="p" data-group-id="8289016489-4">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">nums</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="8289016489-4">)</span><span class="w">
+</span><span class="p" data-group-id="8289016489-5">#</span><span class="nc" data-group-id="8289016489-5">Explorer.DataFrame</span><span class="p" data-group-id="8289016489-5">&lt;</span><span class="w">
+  </span><span class="nc">Polars</span><span class="p" data-group-id="8289016489-6">[</span><span class="mi">1</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="8289016489-6">]</span><span class="w">
+  </span><span class="n">strs</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="p" data-group-id="8289016489-7">[</span><span class="s">&quot;c&quot;</span><span class="p" data-group-id="8289016489-7">]</span><span class="w">
+  </span><span class="n">nums</span><span class="w"> </span><span class="n">integer</span><span class="w"> </span><span class="p" data-group-id="8289016489-8">[</span><span class="mi">3</span><span class="p" data-group-id="8289016489-8">]</span><span class="w">
+</span><span class="p" data-group-id="8289016489-5">&gt;</span></code></pre><p>If a column has unusual format, you can either rename it before-hand,
+or use <a href="#col/1"><code class="inline">col/1</code></a> inside queries:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="8184946866-1">(</span><span class="ss">&quot;unusual nums&quot;</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="8184946866-2">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p" data-group-id="8184946866-2">]</span><span class="p" data-group-id="8184946866-1">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">filter</span><span class="p" data-group-id="8184946866-3">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="p" data-group-id="8184946866-4">(</span><span class="s">&quot;unusual nums&quot;</span><span class="p" data-group-id="8184946866-4">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="8184946866-3">)</span><span class="w">
+</span><span class="p" data-group-id="8184946866-5">#</span><span class="nc" data-group-id="8184946866-5">Explorer.DataFrame</span><span class="p" data-group-id="8184946866-5">&lt;</span><span class="w">
+  </span><span class="nc">Polars</span><span class="p" data-group-id="8184946866-6">[</span><span class="mi">1</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="8184946866-6">]</span><span class="w">
+  </span><span class="n">unusual</span><span class="w"> </span><span class="n">nums</span><span class="w"> </span><span class="n">integer</span><span class="w"> </span><span class="p" data-group-id="8184946866-7">[</span><span class="mi">3</span><span class="p" data-group-id="8184946866-7">]</span><span class="w">
+</span><span class="p" data-group-id="8184946866-5">&gt;</span></code></pre><p>All operations from <a href="Explorer.Series.html"><code class="inline">Explorer.Series</code></a> are imported inside queries.
 This module also provides operators to use in queries, which are
 also imported into queries.</p><h2 id="module-supported-operations" class="section-heading">
   <a href="#module-supported-operations" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
@@ -143,35 +143,35 @@ also imported into queries.</p><h2 id="module-supported-operations" class="secti
 </h2>
 <p>If you want to access variables defined outside of the query
 or get access to all Elixir constructs, you must use <code class="inline">^</code>:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="4914870308-1">(</span><span class="ss">strs</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4914870308-2">[</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="p" data-group-id="4914870308-2">]</span><span class="p">,</span><span class="w"> </span><span class="ss">nums</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4914870308-3">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p" data-group-id="4914870308-3">]</span><span class="p" data-group-id="4914870308-1">)</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">filter</span><span class="p" data-group-id="4914870308-4">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">nums</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">^</span><span class="n">min</span><span class="p" data-group-id="4914870308-4">)</span><span class="w">
-</span><span class="p" data-group-id="4914870308-5">#</span><span class="nc" data-group-id="4914870308-5">Explorer.DataFrame</span><span class="p" data-group-id="4914870308-5">&lt;</span><span class="w">
-  </span><span class="nc">Polars</span><span class="p" data-group-id="4914870308-6">[</span><span class="mi">1</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="4914870308-6">]</span><span class="w">
-  </span><span class="n">strs</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="p" data-group-id="4914870308-7">[</span><span class="s">&quot;c&quot;</span><span class="p" data-group-id="4914870308-7">]</span><span class="w">
-  </span><span class="n">nums</span><span class="w"> </span><span class="n">integer</span><span class="w"> </span><span class="p" data-group-id="4914870308-8">[</span><span class="mi">3</span><span class="p" data-group-id="4914870308-8">]</span><span class="w">
-</span><span class="p" data-group-id="4914870308-5">&gt;</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="2737294005-1">(</span><span class="ss">strs</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2737294005-2">[</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="p" data-group-id="2737294005-2">]</span><span class="p">,</span><span class="w"> </span><span class="ss">nums</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2737294005-3">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p" data-group-id="2737294005-3">]</span><span class="p" data-group-id="2737294005-1">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">filter</span><span class="p" data-group-id="2737294005-4">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">nums</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">^</span><span class="n">min</span><span class="p" data-group-id="2737294005-4">)</span><span class="w">
+</span><span class="p" data-group-id="2737294005-5">#</span><span class="nc" data-group-id="2737294005-5">Explorer.DataFrame</span><span class="p" data-group-id="2737294005-5">&lt;</span><span class="w">
+  </span><span class="nc">Polars</span><span class="p" data-group-id="2737294005-6">[</span><span class="mi">1</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="2737294005-6">]</span><span class="w">
+  </span><span class="n">strs</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="p" data-group-id="2737294005-7">[</span><span class="s">&quot;c&quot;</span><span class="p" data-group-id="2737294005-7">]</span><span class="w">
+  </span><span class="n">nums</span><span class="w"> </span><span class="n">integer</span><span class="w"> </span><span class="p" data-group-id="2737294005-8">[</span><span class="mi">3</span><span class="p" data-group-id="2737294005-8">]</span><span class="w">
+</span><span class="p" data-group-id="2737294005-5">&gt;</span><span class="w">
 
 </span><span class="gp unselectable">iex&gt; </span><span class="n">min</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="4914870308-9">(</span><span class="ss">strs</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4914870308-10">[</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="p" data-group-id="4914870308-10">]</span><span class="p">,</span><span class="w"> </span><span class="ss">nums</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="4914870308-11">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p" data-group-id="4914870308-11">]</span><span class="p" data-group-id="4914870308-9">)</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">filter</span><span class="p" data-group-id="4914870308-12">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">nums</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="o">^</span><span class="k">if</span><span class="p" data-group-id="4914870308-13">(</span><span class="n">min</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="ss">do</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="ss">else</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mi">10</span><span class="p" data-group-id="4914870308-13">)</span><span class="p" data-group-id="4914870308-12">)</span><span class="w">
-</span><span class="p" data-group-id="4914870308-14">#</span><span class="nc" data-group-id="4914870308-14">Explorer.DataFrame</span><span class="p" data-group-id="4914870308-14">&lt;</span><span class="w">
-  </span><span class="nc">Polars</span><span class="p" data-group-id="4914870308-15">[</span><span class="mi">3</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="4914870308-15">]</span><span class="w">
-  </span><span class="n">strs</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="p" data-group-id="4914870308-16">[</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="p" data-group-id="4914870308-16">]</span><span class="w">
-  </span><span class="n">nums</span><span class="w"> </span><span class="n">integer</span><span class="w"> </span><span class="p" data-group-id="4914870308-17">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p" data-group-id="4914870308-17">]</span><span class="w">
-</span><span class="p" data-group-id="4914870308-14">&gt;</span></code></pre><p><code class="inline">^</code> can be used with <code class="inline">col</code> to access columns dynamically:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="8637859423-1">(</span><span class="ss">&quot;unusual nums&quot;</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="8637859423-2">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p" data-group-id="8637859423-2">]</span><span class="p" data-group-id="8637859423-1">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="2737294005-9">(</span><span class="ss">strs</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2737294005-10">[</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="p" data-group-id="2737294005-10">]</span><span class="p">,</span><span class="w"> </span><span class="ss">nums</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="2737294005-11">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p" data-group-id="2737294005-11">]</span><span class="p" data-group-id="2737294005-9">)</span><span class="w">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">filter</span><span class="p" data-group-id="2737294005-12">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">nums</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="o">^</span><span class="k">if</span><span class="p" data-group-id="2737294005-13">(</span><span class="n">min</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="ss">do</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="ss">else</span><span class="p">:</span><span class="w"> </span><span class="o">-</span><span class="mi">10</span><span class="p" data-group-id="2737294005-13">)</span><span class="p" data-group-id="2737294005-12">)</span><span class="w">
+</span><span class="p" data-group-id="2737294005-14">#</span><span class="nc" data-group-id="2737294005-14">Explorer.DataFrame</span><span class="p" data-group-id="2737294005-14">&lt;</span><span class="w">
+  </span><span class="nc">Polars</span><span class="p" data-group-id="2737294005-15">[</span><span class="mi">3</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="2737294005-15">]</span><span class="w">
+  </span><span class="n">strs</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="p" data-group-id="2737294005-16">[</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;c&quot;</span><span class="p" data-group-id="2737294005-16">]</span><span class="w">
+  </span><span class="n">nums</span><span class="w"> </span><span class="n">integer</span><span class="w"> </span><span class="p" data-group-id="2737294005-17">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p" data-group-id="2737294005-17">]</span><span class="w">
+</span><span class="p" data-group-id="2737294005-14">&gt;</span></code></pre><p><code class="inline">^</code> can be used with <code class="inline">col</code> to access columns dynamically:</p><pre><code class="makeup elixir" translate="no"><span class="gp unselectable">iex&gt; </span><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">new</span><span class="p" data-group-id="7577823192-1">(</span><span class="ss">&quot;unusual nums&quot;</span><span class="p">:</span><span class="w"> </span><span class="p" data-group-id="7577823192-2">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p" data-group-id="7577823192-2">]</span><span class="p" data-group-id="7577823192-1">)</span><span class="w">
 </span><span class="gp unselectable">iex&gt; </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;unusual nums&quot;</span><span class="w">
-</span><span class="gp unselectable">iex&gt; </span><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">filter</span><span class="p" data-group-id="8637859423-3">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="p" data-group-id="8637859423-4">(</span><span class="o">^</span><span class="n">name</span><span class="p" data-group-id="8637859423-4">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="8637859423-3">)</span><span class="w">
-</span><span class="p" data-group-id="8637859423-5">#</span><span class="nc" data-group-id="8637859423-5">Explorer.DataFrame</span><span class="p" data-group-id="8637859423-5">&lt;</span><span class="w">
-  </span><span class="nc">Polars</span><span class="p" data-group-id="8637859423-6">[</span><span class="mi">1</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="8637859423-6">]</span><span class="w">
-  </span><span class="n">unusual</span><span class="w"> </span><span class="n">nums</span><span class="w"> </span><span class="n">integer</span><span class="w"> </span><span class="p" data-group-id="8637859423-7">[</span><span class="mi">3</span><span class="p" data-group-id="8637859423-7">]</span><span class="w">
-</span><span class="p" data-group-id="8637859423-5">&gt;</span></code></pre><h2 id="module-implementation-details" class="section-heading">
+</span><span class="gp unselectable">iex&gt; </span><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">filter</span><span class="p" data-group-id="7577823192-3">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="p" data-group-id="7577823192-4">(</span><span class="o">^</span><span class="n">name</span><span class="p" data-group-id="7577823192-4">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="7577823192-3">)</span><span class="w">
+</span><span class="p" data-group-id="7577823192-5">#</span><span class="nc" data-group-id="7577823192-5">Explorer.DataFrame</span><span class="p" data-group-id="7577823192-5">&lt;</span><span class="w">
+  </span><span class="nc">Polars</span><span class="p" data-group-id="7577823192-6">[</span><span class="mi">1</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="mi">1</span><span class="p" data-group-id="7577823192-6">]</span><span class="w">
+  </span><span class="n">unusual</span><span class="w"> </span><span class="n">nums</span><span class="w"> </span><span class="n">integer</span><span class="w"> </span><span class="p" data-group-id="7577823192-7">[</span><span class="mi">3</span><span class="p" data-group-id="7577823192-7">]</span><span class="w">
+</span><span class="p" data-group-id="7577823192-5">&gt;</span></code></pre><h2 id="module-implementation-details" class="section-heading">
   <a href="#module-implementation-details" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
   <p class="sr-only">implementation-details</p>
   </a>
   Implementation details
 </h2>
 <p>Queries simply become lazy dataframe operations at runtime.
-For example, the following query</p><pre><code class="makeup elixir" translate="no"><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">filter</span><span class="p" data-group-id="7730777627-1">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">nums</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="7730777627-1">)</span></code></pre><p>is equivalent to</p><pre><code class="makeup elixir" translate="no"><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">filter_with</span><span class="p" data-group-id="9973253648-1">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="k" data-group-id="9973253648-2">fn</span><span class="w"> </span><span class="n">df</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">df</span><span class="p" data-group-id="9973253648-3">[</span><span class="s">&quot;nums&quot;</span><span class="p" data-group-id="9973253648-3">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="k" data-group-id="9973253648-2">end</span><span class="p" data-group-id="9973253648-1">)</span></code></pre><p>This means that, whenever you want to generate queries programatically,
+For example, the following query</p><pre><code class="makeup elixir" translate="no"><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">filter</span><span class="p" data-group-id="8365453480-1">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">nums</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span><span class="p" data-group-id="8365453480-1">)</span></code></pre><p>is equivalent to</p><pre><code class="makeup elixir" translate="no"><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">filter_with</span><span class="p" data-group-id="5097665525-1">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="k" data-group-id="5097665525-2">fn</span><span class="w"> </span><span class="n">df</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">df</span><span class="p" data-group-id="5097665525-3">[</span><span class="s">&quot;nums&quot;</span><span class="p" data-group-id="5097665525-3">]</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="k" data-group-id="5097665525-2">end</span><span class="p" data-group-id="5097665525-1">)</span></code></pre><p>This means that, whenever you want to generate queries programatically,
 you can fallback to the regular <code class="inline">_with</code> APIs.</p>
   </section>
 
@@ -362,7 +362,7 @@ Functions
     </a>
     <h1 class="signature" translate="no">left ** right</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0/lib/explorer/query.ex#L192" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.6.0-dev/lib/explorer/query.ex#L192" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -384,7 +384,7 @@ Functions
     </a>
     <h1 class="signature" translate="no">left * right</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0/lib/explorer/query.ex#L192" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.6.0-dev/lib/explorer/query.ex#L192" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -406,7 +406,7 @@ Functions
     </a>
     <h1 class="signature" translate="no">+number</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0/lib/explorer/query.ex#L210" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.6.0-dev/lib/explorer/query.ex#L210" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -428,7 +428,7 @@ Functions
     </a>
     <h1 class="signature" translate="no">left + right</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0/lib/explorer/query.ex#L192" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.6.0-dev/lib/explorer/query.ex#L192" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -450,7 +450,7 @@ Functions
     </a>
     <h1 class="signature" translate="no">-number</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0/lib/explorer/query.ex#L200" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.6.0-dev/lib/explorer/query.ex#L200" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -472,7 +472,7 @@ Functions
     </a>
     <h1 class="signature" translate="no">left - right</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0/lib/explorer/query.ex#L192" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.6.0-dev/lib/explorer/query.ex#L192" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -494,7 +494,7 @@ Functions
     </a>
     <h1 class="signature" translate="no">left / right</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0/lib/explorer/query.ex#L192" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.6.0-dev/lib/explorer/query.ex#L192" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -516,7 +516,7 @@ Functions
     </a>
     <h1 class="signature" translate="no">left != right</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0/lib/explorer/query.ex#L192" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.6.0-dev/lib/explorer/query.ex#L192" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -538,7 +538,7 @@ Functions
     </a>
     <h1 class="signature" translate="no">left &lt; right</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0/lib/explorer/query.ex#L192" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.6.0-dev/lib/explorer/query.ex#L192" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -560,7 +560,7 @@ Functions
     </a>
     <h1 class="signature" translate="no">left &lt;= right</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0/lib/explorer/query.ex#L192" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.6.0-dev/lib/explorer/query.ex#L192" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -582,7 +582,7 @@ Functions
     </a>
     <h1 class="signature" translate="no">left == right</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0/lib/explorer/query.ex#L192" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.6.0-dev/lib/explorer/query.ex#L192" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -604,7 +604,7 @@ Functions
     </a>
     <h1 class="signature" translate="no">left &gt; right</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0/lib/explorer/query.ex#L192" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.6.0-dev/lib/explorer/query.ex#L192" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -626,7 +626,7 @@ Functions
     </a>
     <h1 class="signature" translate="no">left &gt;= right</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0/lib/explorer/query.ex#L192" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.6.0-dev/lib/explorer/query.ex#L192" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -648,7 +648,7 @@ Functions
     </a>
     <h1 class="signature" translate="no">col(name)</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0/lib/explorer/query.ex#L219" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.6.0-dev/lib/explorer/query.ex#L219" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -673,7 +673,7 @@ It is equivalent to <code class="inline">df[name]</code> but inside a query.</p>
     </a>
     <h1 class="signature" translate="no">query(expression)</h1>
 
-      <a href="https://github.com/elixir-nx/explorer/blob/v0.5.0/lib/explorer/query.ex#L118" class="icon-action" rel="help" title="View Source">
+      <a href="https://github.com/elixir-nx/explorer/blob/v0.6.0-dev/lib/explorer/query.ex#L118" class="icon-action" rel="help" title="View Source">
        <i class="ri-code-s-slash-line" aria-hidden="true"></i>
        <span class="sr-only">View Source</span>
      </a>
@@ -698,11 +698,11 @@ See the moduledoc for more information.</p>
         <p>
 
             <span class="line">
-              <a href="https://hex.pm/packages/explorer/0.5.0" class="footer-hex-package">Hex Package</a>
+              <a href="https://hex.pm/packages/explorer/0.6.0-dev" class="footer-hex-package">Hex Package</a>
 
-              <a href="https://preview.hex.pm/preview/explorer/0.5.0">Hex Preview</a>
+              <a href="https://preview.hex.pm/preview/explorer/0.6.0-dev">Hex Preview</a>
 
-                (<a href="https://preview.hex.pm/preview/explorer/0.5.0/show/lib/explorer/query.ex">current file</a>)
+                (<a href="https://preview.hex.pm/preview/explorer/0.6.0-dev/show/lib/explorer/query.ex">current file</a>)
 
             </span>
 
