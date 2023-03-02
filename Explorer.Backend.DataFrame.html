@@ -2412,8 +2412,10 @@ Callbacks
 
           <pre translate="no"><span class="attribute">@callback</span> slice(
   <a href="#t:df/0">df</a>(),
-  indices :: [<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>()] | %Range{first: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(), last: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(), step: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()}
-) :: <a href="#t:df/0">df</a>()</pre>
+  indices ::
+    [<a href="https://hexdocs.pm/elixir/typespecs.html#basic-types">integer</a>()] | <a href="#t:series/0">series</a>() | %Range{first: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(), last: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>(), step: <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">term</a>()}
+) ::
+  <a href="#t:df/0">df</a>()</pre>
 
       </div>
 
