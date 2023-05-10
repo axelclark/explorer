@@ -116,22 +116,49 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
   </a>
   <a href="https://github.com/elixir-nx/explorer/compare/v0.5.6...HEAD" title="">Unreleased</a>
 </h2>
-<h2 id="v0-5-6-2023-03-24" class="section-heading">
-  <a href="#v0-5-6-2023-03-24" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
-  <p class="sr-only">v0-5-6-2023-03-24</p>
-  </a>
-  <a href="https://github.com/elixir-nx/explorer/compare/v0.5.5...v0.5.6" title="">v0.5.6</a> - 2023-03-24
-</h2>
 <h3 id="added" class="section-heading">
   <a href="#added" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
   <p class="sr-only">added</p>
   </a>
   Added
 </h3>
-<ul><li>Add the following functions to the <a href="Explorer.Series.html"><code class="inline">Explorer.Series</code></a> module: <code class="inline">log/1</code>, <code class="inline">log/2</code>
-and <code class="inline">exp/1</code>. They compute the logarithm and exponential of a series.</li></ul><h3 id="fixed" class="section-heading">
+<ul><li><p>Allow <a href="Explorer.Series.html#select/3"><code class="inline">Explorer.Series.select/3</code></a> to receive series of size 1 in both sides.</p></li><li><p>Add trigonometric functions <code class="inline">sin/1</code>, <code class="inline">cos/1</code>, <code class="inline">tan/1</code>, <code class="inline">asin/1</code>, <code class="inline">acos/1</code> and
+<code class="inline">atan/1</code> to <a href="Explorer.Series.html"><code class="inline">Explorer.Series</code></a>.</p></li><li><p>Add <a href="Explorer.DataFrame.html#to_rows_stream/2"><code class="inline">Explorer.DataFrame.to_rows_stream/2</code></a> function. This is useful to traverse
+dataframes with large series, but is not recommended since it can be an expensive
+operation.</p></li><li><p>Add LazyFrame version of <a href="Explorer.DataFrame.html#to_ipc/3"><code class="inline">Explorer.DataFrame.to_ipc/3</code></a>.</p></li><li><p>Add options to control streaming when writing lazy dataframes. Now users can
+toggle streaming for the <code class="inline">to_ipc/3</code> and <code class="inline">to_parquet/3</code> functions.</p></li><li><p>Add <a href="Explorer.DataFrame.html#from_ipc_stream/2"><code class="inline">Explorer.DataFrame.from_ipc_stream/2</code></a> lazy, but using the eager implementation
+underneath.</p></li><li><p>Add option to control the end of line (EOF) char when reading CSV files.
+We call this new option <code class="inline">:eol_delimiter</code>, and it's available for the <code class="inline">from_csv/2</code>
+and <code class="inline">load_csv/2</code> functions in the <a href="Explorer.DataFrame.html"><code class="inline">Explorer.DataFrame</code></a> module.</p></li><li><p>Allow <a href="Explorer.DataFrame.html#pivot_wider/4"><code class="inline">Explorer.DataFrame.pivot_wider/4</code></a> to use category fields. </p></li></ul><h3 id="fixed" class="section-heading">
   <a href="#fixed" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
   <p class="sr-only">fixed</p>
+  </a>
+  Fixed
+</h3>
+<ul><li><p>Fix <code class="inline">nif_not_loaded</code> error when <a href="Explorer.Series.html#ewm_mean/2"><code class="inline">Explorer.Series.ewm_mean/2</code></a> is called from query.</p></li><li><p>Type check arguments for boolean series operations, only allowing series of
+the <code class="inline">boolean</code> dtype.</p></li><li><p>Do not use <a href="https://hexdocs.pm/elixir/Kernel.html#../0"><code class="inline">../0</code></a> in order to keep compatible with Elixir 1.13</p></li></ul><h3 id="removed" class="section-heading">
+  <a href="#removed" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">removed</p>
+  </a>
+  Removed
+</h3>
+<ul><li>Temporarely remove support for ARM 32 bits computers in the precompilation
+workflow.</li></ul><h2 id="v0-5-6-2023-03-24" class="section-heading">
+  <a href="#v0-5-6-2023-03-24" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">v0-5-6-2023-03-24</p>
+  </a>
+  <a href="https://github.com/elixir-nx/explorer/compare/v0.5.5...v0.5.6" title="">v0.5.6</a> - 2023-03-24
+</h2>
+<h3 id="added-1" class="section-heading">
+  <a href="#added-1" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">added-1</p>
+  </a>
+  Added
+</h3>
+<ul><li>Add the following functions to the <a href="Explorer.Series.html"><code class="inline">Explorer.Series</code></a> module: <code class="inline">log/1</code>, <code class="inline">log/2</code>
+and <code class="inline">exp/1</code>. They compute the logarithm and exponential of a series.</li></ul><h3 id="fixed-1" class="section-heading">
+  <a href="#fixed-1" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">fixed-1</p>
   </a>
   Fixed
 </h3>
@@ -143,9 +170,9 @@ functions. This is going to encode the atoms for NaN and infinity values.</p></l
   </a>
   <a href="https://github.com/elixir-nx/explorer/compare/v0.5.4...v0.5.5" title="">v0.5.5</a> - 2023-03-13
 </h2>
-<h3 id="added-1" class="section-heading">
-  <a href="#added-1" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
-  <p class="sr-only">added-1</p>
+<h3 id="added-2" class="section-heading">
+  <a href="#added-2" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">added-2</p>
   </a>
   Added
 </h3>
@@ -165,9 +192,9 @@ variables instead of keyword args. This is needed to make explicit when a backen
 is not implementing an option.</p></li><li><p>Change the <a href="Explorer.Backend.DataFrame.html"><code class="inline">Explorer.Backend.DataFrame</code></a>'s <code class="inline">describe</code> callback and remove the
 need for an &quot;out df&quot;, since we won't have a lazy version of that funcion.</p></li><li><p>This shouldn't affect the API, but we had an update in Polars.
 It is now using <code class="inline">v0.27.2</code>. For further details, see:
-<a href="https://github.com/pola-rs/polars/releases/tag/rs-0.27.0">Rust Polars 0.27.0</a>.</p></li></ul><h3 id="fixed-1" class="section-heading">
-  <a href="#fixed-1" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
-  <p class="sr-only">fixed-1</p>
+<a href="https://github.com/pola-rs/polars/releases/tag/rs-0.27.0">Rust Polars 0.27.0</a>.</p></li></ul><h3 id="fixed-2" class="section-heading">
+  <a href="#fixed-2" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">fixed-2</p>
   </a>
   Fixed
 </h3>
@@ -179,9 +206,9 @@ See the <a href="https://github.com/philss/rustler_precompiled/issues/53">origin
   </a>
   <a href="https://github.com/elixir-nx/explorer/compare/v0.5.3...v0.5.4" title="">v0.5.4</a> - 2023-03-09
 </h2>
-<h3 id="fixed-2" class="section-heading">
-  <a href="#fixed-2" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
-  <p class="sr-only">fixed-2</p>
+<h3 id="fixed-3" class="section-heading">
+  <a href="#fixed-3" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">fixed-3</p>
   </a>
   Fixed
 </h3>
@@ -193,9 +220,9 @@ the main <a href="Explorer.html"><code class="inline">Explorer</code></a> module
   </a>
   <a href="https://github.com/elixir-nx/explorer/compare/v0.5.2...v0.5.3" title="">v0.5.3</a> - 2023-03-08
 </h2>
-<h3 id="added-2" class="section-heading">
-  <a href="#added-2" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
-  <p class="sr-only">added-2</p>
+<h3 id="added-3" class="section-heading">
+  <a href="#added-3" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">added-3</p>
   </a>
   Added
 </h3>
@@ -203,9 +230,9 @@ the main <a href="Explorer.html"><code class="inline">Explorer</code></a> module
 always returning a string series.</p></li><li><p>With the addition of <code class="inline">format/1</code>, we also have a new operator for string concatenation
 inside <a href="Explorer.Query.html"><code class="inline">Explorer.Query</code></a>. It is the <code class="inline">&lt;&gt;</code> operator, that is similar to what the <a href="https://hexdocs.pm/elixir/Kernel.html#%3C%3E/2"><code class="inline">Kernel.&lt;&gt;/2</code></a>
 operator does, but instead of concatenating strings, it concatenates two series, returning
-a string series - it is using <code class="inline">format/1</code> underneath.</p></li><li><p>Add support for slicing by series in dataframes and other series.</p></li><li><p>Add support for 2D tensors in <a href="Explorer.DataFrame.html#new/2"><code class="inline">Explorer.DataFrame.new/2</code></a>.</p></li></ul><h3 id="fixed-3" class="section-heading">
-  <a href="#fixed-3" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
-  <p class="sr-only">fixed-3</p>
+a string series - it is using <code class="inline">format/1</code> underneath.</p></li><li><p>Add support for slicing by series in dataframes and other series.</p></li><li><p>Add support for 2D tensors in <a href="Explorer.DataFrame.html#new/2"><code class="inline">Explorer.DataFrame.new/2</code></a>.</p></li></ul><h3 id="fixed-4" class="section-heading">
+  <a href="#fixed-4" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">fixed-4</p>
   </a>
   Fixed
 </h3>
@@ -219,25 +246,25 @@ ID column. We add a suffix for these columns.</p></li></ul><h2 id="v0-5-2-2023-0
   </a>
   <a href="https://github.com/elixir-nx/explorer/compare/v0.5.1...v0.5.2" title="">v0.5.2</a> - 2023-02-28
 </h2>
-<h3 id="added-3" class="section-heading">
-  <a href="#added-3" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
-  <p class="sr-only">added-3</p>
+<h3 id="added-4" class="section-heading">
+  <a href="#added-4" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">added-4</p>
   </a>
   Added
 </h3>
 <ul><li><p>Add <code class="inline">across</code> and comprehensions to <a href="Explorer.Query.html"><code class="inline">Explorer.Query</code></a>. These features allow a
-more flexible and elegant way to work with multiple columns at once. Example:</p><pre><code class="makeup elixir" translate="no"><span class="n">iris</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Explorer.Datasets</span><span class="o">.</span><span class="n">iris</span><span class="p" data-group-id="0045420142-1">(</span><span class="p" data-group-id="0045420142-1">)</span><span class="w">
-</span><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">mutate</span><span class="p" data-group-id="0045420142-2">(</span><span class="n">iris</span><span class="p">,</span><span class="w">
- </span><span class="k">for</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">across</span><span class="p" data-group-id="0045420142-3">(</span><span class="p" data-group-id="0045420142-4">[</span><span class="s">&quot;sepal_width&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;sepal_length&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;petal_length&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;petal_width&quot;</span><span class="p" data-group-id="0045420142-4">]</span><span class="p" data-group-id="0045420142-3">)</span><span class="w"> </span><span class="k" data-group-id="0045420142-5">do</span><span class="w">
-   </span><span class="p" data-group-id="0045420142-6">{</span><span class="n">col</span><span class="o">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="0045420142-7">(</span><span class="n">col</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">mean</span><span class="p" data-group-id="0045420142-8">(</span><span class="n">col</span><span class="p" data-group-id="0045420142-8">)</span><span class="p" data-group-id="0045420142-7">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">variance</span><span class="p" data-group-id="0045420142-9">(</span><span class="n">col</span><span class="p" data-group-id="0045420142-9">)</span><span class="p" data-group-id="0045420142-6">}</span><span class="w">
- </span><span class="k" data-group-id="0045420142-5">end</span><span class="w">
-</span><span class="p" data-group-id="0045420142-2">)</span></code></pre><p>See the <a href="Explorer.Query.html"><code class="inline">Explorer.Query</code></a> documentation for further details.</p></li><li><p>Add support for regexes to select columns of a dataframe. Example:</p><pre><code class="makeup elixir" translate="no"><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Explorer.Datasets</span><span class="o">.</span><span class="n">wine</span><span class="p" data-group-id="0150018605-1">(</span><span class="p" data-group-id="0150018605-1">)</span><span class="w">
-</span><span class="n">df</span><span class="p" data-group-id="0150018605-2">[</span><span class="sr">~r/(class|hue)/</span><span class="p" data-group-id="0150018605-2">]</span></code></pre></li><li><p>Add the <code class="inline">:max_rows</code> and <code class="inline">:columns</code> options to <a href="Explorer.DataFrame.html#from_parquet/2"><code class="inline">Explorer.DataFrame.from_parquet/2</code></a>. This mirrors
+more flexible and elegant way to work with multiple columns at once. Example:</p><pre><code class="makeup elixir" translate="no"><span class="n">iris</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Explorer.Datasets</span><span class="o">.</span><span class="n">iris</span><span class="p" data-group-id="6986008614-1">(</span><span class="p" data-group-id="6986008614-1">)</span><span class="w">
+</span><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">mutate</span><span class="p" data-group-id="6986008614-2">(</span><span class="n">iris</span><span class="p">,</span><span class="w">
+ </span><span class="k">for</span><span class="w"> </span><span class="n">col</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">across</span><span class="p" data-group-id="6986008614-3">(</span><span class="p" data-group-id="6986008614-4">[</span><span class="s">&quot;sepal_width&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;sepal_length&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;petal_length&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;petal_width&quot;</span><span class="p" data-group-id="6986008614-4">]</span><span class="p" data-group-id="6986008614-3">)</span><span class="w"> </span><span class="k" data-group-id="6986008614-5">do</span><span class="w">
+   </span><span class="p" data-group-id="6986008614-6">{</span><span class="n">col</span><span class="o">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="p" data-group-id="6986008614-7">(</span><span class="n">col</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">mean</span><span class="p" data-group-id="6986008614-8">(</span><span class="n">col</span><span class="p" data-group-id="6986008614-8">)</span><span class="p" data-group-id="6986008614-7">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">variance</span><span class="p" data-group-id="6986008614-9">(</span><span class="n">col</span><span class="p" data-group-id="6986008614-9">)</span><span class="p" data-group-id="6986008614-6">}</span><span class="w">
+ </span><span class="k" data-group-id="6986008614-5">end</span><span class="w">
+</span><span class="p" data-group-id="6986008614-2">)</span></code></pre><p>See the <a href="Explorer.Query.html"><code class="inline">Explorer.Query</code></a> documentation for further details.</p></li><li><p>Add support for regexes to select columns of a dataframe. Example:</p><pre><code class="makeup elixir" translate="no"><span class="n">df</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">Explorer.Datasets</span><span class="o">.</span><span class="n">wine</span><span class="p" data-group-id="1193884072-1">(</span><span class="p" data-group-id="1193884072-1">)</span><span class="w">
+</span><span class="n">df</span><span class="p" data-group-id="1193884072-2">[</span><span class="sr">~r/(class|hue)/</span><span class="p" data-group-id="1193884072-2">]</span></code></pre></li><li><p>Add the <code class="inline">:max_rows</code> and <code class="inline">:columns</code> options to <a href="Explorer.DataFrame.html#from_parquet/2"><code class="inline">Explorer.DataFrame.from_parquet/2</code></a>. This mirrors
 the <code class="inline">from_csv/2</code> function.</p></li><li><p>Allow <a href="Explorer.Series.html"><code class="inline">Explorer.Series</code></a> functions that accept floats to work with <code class="inline">:nan</code>, <code class="inline">:infinity</code>
 and <code class="inline">:neg_infinity</code> values.</p></li><li><p>Add <a href="Explorer.DataFrame.html#shuffle/2"><code class="inline">Explorer.DataFrame.shuffle/2</code></a> and <a href="Explorer.Series.html#shuffle/2"><code class="inline">Explorer.Series.shuffle/2</code></a>.</p></li><li><p>Add support for a list of filters in <a href="Explorer.DataFrame.html#filter/2"><code class="inline">Explorer.DataFrame.filter/2</code></a>. These filters are
-joined as <code class="inline">and</code> expressions.</p></li></ul><h3 id="fixed-4" class="section-heading">
-  <a href="#fixed-4" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
-  <p class="sr-only">fixed-4</p>
+joined as <code class="inline">and</code> expressions.</p></li></ul><h3 id="fixed-5" class="section-heading">
+  <a href="#fixed-5" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">fixed-5</p>
   </a>
   Fixed
 </h3>
@@ -255,9 +282,9 @@ named <code class="inline">:shuffle</code> was added to control that.</p></li></
   </a>
   <a href="https://github.com/elixir-nx/explorer/compare/v0.5.0...v0.5.1" title="">v0.5.1</a> - 2023-02-17
 </h2>
-<h3 id="added-4" class="section-heading">
-  <a href="#added-4" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
-  <p class="sr-only">added-4</p>
+<h3 id="added-5" class="section-heading">
+  <a href="#added-5" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">added-5</p>
   </a>
   Added
 </h3>
@@ -267,9 +294,9 @@ named <code class="inline">:shuffle</code> was added to control that.</p></li></
   </a>
   Changed
 </h3>
-<ul><li>Require version of Rustler to be <code class="inline">~&gt; 0.27.0</code>, which mirrors the NIF requirement.</li></ul><h3 id="fixed-5" class="section-heading">
-  <a href="#fixed-5" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
-  <p class="sr-only">fixed-5</p>
+<ul><li>Require version of Rustler to be <code class="inline">~&gt; 0.27.0</code>, which mirrors the NIF requirement.</li></ul><h3 id="fixed-6" class="section-heading">
+  <a href="#fixed-6" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">fixed-6</p>
   </a>
   Fixed
 </h3>
@@ -279,17 +306,17 @@ named <code class="inline">:shuffle</code> was added to control that.</p></li></
   </a>
   <a href="https://github.com/elixir-nx/explorer/compare/v0.4.0...v0.5.0" title="">v0.5.0</a> - 2023-01-12
 </h2>
-<h3 id="added-5" class="section-heading">
-  <a href="#added-5" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
-  <p class="sr-only">added-5</p>
+<h3 id="added-6" class="section-heading">
+  <a href="#added-6" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">added-6</p>
   </a>
   Added
 </h3>
 <ul><li><p>Add <code class="inline">DataFrame.describe/2</code> to gather some statistics from a dataframe.</p></li><li><p>Add <code class="inline">Series.nil_count/1</code> to count nil values.</p></li><li><p>Add <code class="inline">Series.in/2</code> to check if a given value is inside a series.</p></li><li><p>Add <code class="inline">Series</code> float predicates: <code class="inline">is_finite/1</code>, <code class="inline">is_infinite/1</code> and <code class="inline">is_nan/1</code>.</p></li><li><p>Add <code class="inline">Series</code> string functions: <code class="inline">contains/2</code>, <code class="inline">trim/1</code>, <code class="inline">trim_leading/1</code>, <code class="inline">trim_trailing/1</code>,
 <code class="inline">upcase/1</code> and <code class="inline">downcase/1</code>.</p></li><li><p>Enable slicing of lazy frames (<code class="inline">LazyFrame</code>).</p></li><li><p>Add IO operations &quot;from/load&quot; to the lazy frame implementation.</p></li><li><p>Add support for the <code class="inline">:lazy</code> option in the <code class="inline">DataFrame.new/2</code> function.</p></li><li><p>Add <code class="inline">Series</code> float rounding methods: <code class="inline">round/2</code>, <a href="https://hexdocs.pm/elixir/Kernel.html#floor/1"><code class="inline">floor/1</code></a> and <a href="https://hexdocs.pm/elixir/Kernel.html#ceil/1"><code class="inline">ceil/1</code></a>.</p></li><li><p>Add support for precompiling to Linux running on RISCV CPUs.</p></li><li><p>Add support for precompiling to Linux - with musl - running on AARCH64 computers.</p></li><li><p>Allow <code class="inline">DataFrame.new/1</code> to receive the <code class="inline">:dtypes</code> option.</p></li><li><p>Accept <code class="inline">:nan</code> as an option for <code class="inline">Series.fill_missing/2</code> with float series.</p></li><li><p>Add basic support for the categorical dtype - the <code class="inline">:category</code> dtype.</p></li><li><p>Add <code class="inline">Series.categories/1</code> to return categories from a categorical series.</p></li><li><p>Add <code class="inline">Series.categorise/2</code> to categorise a series of integers using predefined categories.</p></li><li><p>Add <code class="inline">Series.replace/2</code> to replace the contents of a series.</p></li><li><p>Support selecting columns with unusual names (like with spaces) inside <a href="Explorer.Query.html"><code class="inline">Explorer.Query</code></a>
-with <code class="inline">col/1</code>.</p><p>The usage is like this:</p><pre><code class="makeup elixir" translate="no"><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">filter</span><span class="p" data-group-id="8900398261-1">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="p" data-group-id="8900398261-2">(</span><span class="s">&quot;my col&quot;</span><span class="p" data-group-id="8900398261-2">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">42</span><span class="p" data-group-id="8900398261-1">)</span></code></pre></li></ul><h3 id="fixed-6" class="section-heading">
-  <a href="#fixed-6" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
-  <p class="sr-only">fixed-6</p>
+with <code class="inline">col/1</code>.</p><p>The usage is like this:</p><pre><code class="makeup elixir" translate="no"><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">filter</span><span class="p" data-group-id="6178786503-1">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">col</span><span class="p" data-group-id="6178786503-2">(</span><span class="s">&quot;my col&quot;</span><span class="p" data-group-id="6178786503-2">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">42</span><span class="p" data-group-id="6178786503-1">)</span></code></pre></li></ul><h3 id="fixed-7" class="section-heading">
+  <a href="#fixed-7" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">fixed-7</p>
   </a>
   Fixed
 </h3>
@@ -306,16 +333,16 @@ This fix is only applied for the eager implementation for now.</li></ul><h3 id="
   </a>
   <a href="https://github.com/elixir-nx/explorer/compare/v0.3.1...v0.4.0" title="">v0.4.0</a> - 2022-11-29
 </h2>
-<h3 id="added-6" class="section-heading">
-  <a href="#added-6" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
-  <p class="sr-only">added-6</p>
+<h3 id="added-7" class="section-heading">
+  <a href="#added-7" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">added-7</p>
   </a>
   Added
 </h3>
 <ul><li><p>Add <code class="inline">Series.quotient/2</code> and <code class="inline">Series.remainder/2</code> to work with integer division.</p></li><li><p>Add <code class="inline">Series.iotype/1</code> to return the underlying representation type.</p></li><li><p>Allow series on both sides of binary operations, like: <code class="inline">add(series, 1)</code>
 and <code class="inline">add(1, series)</code>.</p></li><li><p>Allow comparison, concat and coalesce operations on &quot;(series, lazy series)&quot;.</p></li><li><p>Add lazy version of <code class="inline">Series.sample/3</code> and <code class="inline">Series.size/1</code>.</p></li><li><p>Add support for Arrow IPC Stream files.</p></li><li><p>Add <a href="Explorer.Query.html"><code class="inline">Explorer.Query</code></a> and the macros that allow a simplified query API.
 This is a huge improvement to some of the main functions, and allow refering to
-columns as they were variables.</p><p>Before this change we would need to write a filter like this:</p><pre><code class="makeup elixir" translate="no"><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">filter_with</span><span class="p" data-group-id="4129089896-1">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="nc">Explorer.Series</span><span class="o">.</span><span class="n">greater</span><span class="p" data-group-id="4129089896-2">(</span><span class="ni">&amp;1</span><span class="p" data-group-id="4129089896-3">[</span><span class="s">&quot;col1&quot;</span><span class="p" data-group-id="4129089896-3">]</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p" data-group-id="4129089896-2">)</span><span class="p" data-group-id="4129089896-1">)</span></code></pre><p>But now it's also possible to write this operation like this:</p><pre><code class="makeup elixir" translate="no"><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">filter</span><span class="p" data-group-id="7123414930-1">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">col1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">42</span><span class="p" data-group-id="7123414930-1">)</span></code></pre><p>This operation is going to use <code class="inline">filter_with/2</code> underneath, which means that
+columns as they were variables.</p><p>Before this change we would need to write a filter like this:</p><pre><code class="makeup elixir" translate="no"><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">filter_with</span><span class="p" data-group-id="6771998940-1">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="nc">Explorer.Series</span><span class="o">.</span><span class="n">greater</span><span class="p" data-group-id="6771998940-2">(</span><span class="ni">&amp;1</span><span class="p" data-group-id="6771998940-3">[</span><span class="s">&quot;col1&quot;</span><span class="p" data-group-id="6771998940-3">]</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p" data-group-id="6771998940-2">)</span><span class="p" data-group-id="6771998940-1">)</span></code></pre><p>But now it's also possible to write this operation like this:</p><pre><code class="makeup elixir" translate="no"><span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">filter</span><span class="p" data-group-id="7639636667-1">(</span><span class="n">df</span><span class="p">,</span><span class="w"> </span><span class="n">col1</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">42</span><span class="p" data-group-id="7639636667-1">)</span></code></pre><p>This operation is going to use <code class="inline">filter_with/2</code> underneath, which means that
 is going to use lazy series and compute the results at once.
 Notice that is mandatory to &quot;require&quot; the DataFrame module, since these operations
 are implemented as macros.</p><p>The following new macros were added:</p><ul><li><code class="inline">filter/2</code></li><li><code class="inline">mutate/2</code></li><li><code class="inline">summarise/2</code></li><li><code class="inline">arrange/2</code></li></ul><p>They substitute older versions that did not accept the new query syntax.</p></li><li><p>Add <code class="inline">DataFrame.put/3</code> to enable adding or replacing columns in a eager manner.
@@ -337,17 +364,17 @@ that returns the size of an &quot;eager&quot; series, or the count of members in
 for a lazy series.
 In case there is no groups, it calculates the size of the dataframe.</li><li>Change the option to control direction in <code class="inline">Series.sort/2</code> and <code class="inline">Series.argsort/2</code>.
 Instead of a boolean, now we have a new option called <code class="inline">:direction</code> that accepts
-<code class="inline">:asc</code> or <code class="inline">:desc</code>.</li></ul><h3 id="fixed-7" class="section-heading">
-  <a href="#fixed-7" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
-  <p class="sr-only">fixed-7</p>
+<code class="inline">:asc</code> or <code class="inline">:desc</code>.</li></ul><h3 id="fixed-8" class="section-heading">
+  <a href="#fixed-8" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">fixed-8</p>
   </a>
   Fixed
 </h3>
 <ul><li>Fix the following DataFrame functions to work with groups:<ul><li><code class="inline">filter_with/2</code></li><li><code class="inline">head/2</code></li><li><code class="inline">tail/2</code></li><li><code class="inline">slice/2</code></li><li><code class="inline">slice/3</code></li><li><code class="inline">pivot_longer/3</code></li><li><code class="inline">pivot_wider/4</code></li><li><code class="inline">concat_rows/1</code></li><li><code class="inline">concat_columns/1</code></li></ul></li><li>Improve the documentation of functions that behave differently with groups.</li><li>Fix <code class="inline">arrange_with/2</code> to use &quot;group by&quot; stable, making results more predictable.</li><li>Add <code class="inline">nil</code> as a possible return value of aggregations.</li><li>Fix the behaviour of <code class="inline">Series.sort/2</code> and <code class="inline">Series.argsort/2</code> to add nils at the
 front when direction is descending, or at the back when the direction is ascending.
-This also adds an option to control this behaviour.</li></ul><h3 id="removed" class="section-heading">
-  <a href="#removed" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
-  <p class="sr-only">removed</p>
+This also adds an option to control this behaviour.</li></ul><h3 id="removed-1" class="section-heading">
+  <a href="#removed-1" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">removed-1</p>
   </a>
   Removed
 </h3>
@@ -358,9 +385,9 @@ This is due to a limitation of a dependency of Polars.</li></ul><h2 id="v0-3-1-2
   </a>
   <a href="https://github.com/elixir-nx/explorer/compare/v0.3.0...v0.3.1" title="">v0.3.1</a> - 2022-09-09
 </h2>
-<h3 id="fixed-8" class="section-heading">
-  <a href="#fixed-8" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
-  <p class="sr-only">fixed-8</p>
+<h3 id="fixed-9" class="section-heading">
+  <a href="#fixed-9" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">fixed-9</p>
   </a>
   Fixed
 </h3>
@@ -370,9 +397,9 @@ This is due to a limitation of a dependency of Polars.</li></ul><h2 id="v0-3-1-2
   </a>
   <a href="https://github.com/elixir-nx/explorer/compare/v0.2.0...v0.3.0" title="">v0.3.0</a> - 2022-09-01
 </h2>
-<h3 id="added-7" class="section-heading">
-  <a href="#added-7" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
-  <p class="sr-only">added-7</p>
+<h3 id="added-8" class="section-heading">
+  <a href="#added-8" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">added-8</p>
   </a>
   Added
 </h3>
@@ -391,9 +418,9 @@ accepting callbacks before (eg. <code class="inline">filter/2</code> and the new
 </h3>
 <ul><li>Bump version requirement of the <code class="inline">table</code> dependency to <code class="inline">~&gt; 0.1.2</code>, and raise for non-tabular values.</li><li>Normalize how columns are handled. This changes some functions to accept one column or
 a list of columns, ranges, indexes and callbacks selecting columns.</li><li>Rename <code class="inline">DataFrame.filter/2</code> to <code class="inline">DataFrame.mask/2</code>.</li><li>Rename <code class="inline">Series.filter/2</code> to <code class="inline">Series.mask/2</code>.</li><li>Rename <code class="inline">take/2</code> from both <code class="inline">Series</code> and <code class="inline">DataFrame</code> to <code class="inline">slice/2</code>. <code class="inline">slice/2</code> now they accept ranges as well.</li><li>Raise an error if <code class="inline">DataFrame.pivot_wider/4</code> has float columns as IDs. This is because we can´t
-properly compare floats.</li><li>Change <code class="inline">DataFrame.distinct/2</code> to accept columns as argument instead of receiving it as option.</li></ul><h3 id="fixed-9" class="section-heading">
-  <a href="#fixed-9" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
-  <p class="sr-only">fixed-9</p>
+properly compare floats.</li><li>Change <code class="inline">DataFrame.distinct/2</code> to accept columns as argument instead of receiving it as option.</li></ul><h3 id="fixed-10" class="section-heading">
+  <a href="#fixed-10" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">fixed-10</p>
   </a>
   Fixed
 </h3>
@@ -409,9 +436,9 @@ properly compare floats.</li><li>Change <code class="inline">DataFrame.distinct/
   </a>
   <a href="https://github.com/elixir-nx/explorer/compare/v0.1.1...v0.2.0" title="">v0.2.0</a> - 2022-06-22
 </h2>
-<h3 id="added-8" class="section-heading">
-  <a href="#added-8" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
-  <p class="sr-only">added-8</p>
+<h3 id="added-9" class="section-heading">
+  <a href="#added-9" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">added-9</p>
   </a>
   Added
 </h3>
@@ -421,9 +448,9 @@ properly compare floats.</li><li>Change <code class="inline">DataFrame.distinct/
   </a>
   Changed
 </h3>
-<ul><li><code class="inline">Series.length/1</code> is now <code class="inline">Series.size/1</code> in keeping with Elixir idioms</li><li><a href="https://hexdocs.pm/nx/0.5.2/Nx.html"><code class="inline">Nx</code></a> is now an optional dependency</li><li>Minimum Elixir version is now 1.13</li><li><code class="inline">DataFrame.to_map/2</code> is now <code class="inline">DataFrame.to_columns/2</code> and <code class="inline">DataFrame.to_series/2</code></li><li><a href="https://hexdocs.pm/rustler/0.28.0/Rustler.html"><code class="inline">Rustler</code></a> is now an optional dependency</li><li><code class="inline">read_</code> and <code class="inline">write_</code> IO functions are now <code class="inline">from_</code> and <code class="inline">to_</code></li><li><code class="inline">to_binary</code> is now <code class="inline">dump_csv</code></li><li>Now uses <code class="inline">polars</code>'s &quot;simd&quot; feature</li><li>Now uses <code class="inline">polars</code>'s &quot;performant&quot; feature</li><li><code class="inline">Explorer.default_backend/0</code> is now <a href="Explorer.Backend.html#get/0"><code class="inline">Explorer.Backend.get/0</code></a></li><li><code class="inline">Explorer.default_backend/1</code> is now <a href="Explorer.Backend.html#put/1"><code class="inline">Explorer.Backend.put/1</code></a></li><li><code class="inline">Series.cum_*</code> functions are now <code class="inline">Series.cumulative_*</code> to mirror <a href="https://hexdocs.pm/nx/0.5.2/Nx.html"><code class="inline">Nx</code></a></li><li><code class="inline">Series.rolling_*</code> functions are now <code class="inline">Series.window_*</code> to mirror <a href="https://hexdocs.pm/nx/0.5.2/Nx.html"><code class="inline">Nx</code></a></li><li><code class="inline">reverse?</code> is now an option instead of an argument in <code class="inline">Series.cumulative_*</code> functions</li><li><code class="inline">DataFrame.from_columns/2</code> and <code class="inline">DataFrame.from_rows/2</code> is now <code class="inline">DataFrame.new/2</code></li><li>Rename &quot;col&quot; to &quot;column&quot; throughout the API</li><li>Remove &quot;with_&quot; prefix in options throughout the API</li><li><code class="inline">DataFrame.table/2</code> accepts options with <code class="inline">:limit</code> instead of single integer</li><li><code class="inline">rename/2</code> no longer accepts a function, use <code class="inline">rename_with/2</code> instead</li><li><code class="inline">rename_with/3</code> now expects the function as the last argument</li></ul><h3 id="fixed-10" class="section-heading">
-  <a href="#fixed-10" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
-  <p class="sr-only">fixed-10</p>
+<ul><li><code class="inline">Series.length/1</code> is now <code class="inline">Series.size/1</code> in keeping with Elixir idioms</li><li><a href="https://hexdocs.pm/nx/0.5.2/Nx.html"><code class="inline">Nx</code></a> is now an optional dependency</li><li>Minimum Elixir version is now 1.13</li><li><code class="inline">DataFrame.to_map/2</code> is now <code class="inline">DataFrame.to_columns/2</code> and <code class="inline">DataFrame.to_series/2</code></li><li><a href="https://hexdocs.pm/rustler/0.28.0/Rustler.html"><code class="inline">Rustler</code></a> is now an optional dependency</li><li><code class="inline">read_</code> and <code class="inline">write_</code> IO functions are now <code class="inline">from_</code> and <code class="inline">to_</code></li><li><code class="inline">to_binary</code> is now <code class="inline">dump_csv</code></li><li>Now uses <code class="inline">polars</code>'s &quot;simd&quot; feature</li><li>Now uses <code class="inline">polars</code>'s &quot;performant&quot; feature</li><li><code class="inline">Explorer.default_backend/0</code> is now <a href="Explorer.Backend.html#get/0"><code class="inline">Explorer.Backend.get/0</code></a></li><li><code class="inline">Explorer.default_backend/1</code> is now <a href="Explorer.Backend.html#put/1"><code class="inline">Explorer.Backend.put/1</code></a></li><li><code class="inline">Series.cum_*</code> functions are now <code class="inline">Series.cumulative_*</code> to mirror <a href="https://hexdocs.pm/nx/0.5.2/Nx.html"><code class="inline">Nx</code></a></li><li><code class="inline">Series.rolling_*</code> functions are now <code class="inline">Series.window_*</code> to mirror <a href="https://hexdocs.pm/nx/0.5.2/Nx.html"><code class="inline">Nx</code></a></li><li><code class="inline">reverse?</code> is now an option instead of an argument in <code class="inline">Series.cumulative_*</code> functions</li><li><code class="inline">DataFrame.from_columns/2</code> and <code class="inline">DataFrame.from_rows/2</code> is now <code class="inline">DataFrame.new/2</code></li><li>Rename &quot;col&quot; to &quot;column&quot; throughout the API</li><li>Remove &quot;with_&quot; prefix in options throughout the API</li><li><code class="inline">DataFrame.table/2</code> accepts options with <code class="inline">:limit</code> instead of single integer</li><li><code class="inline">rename/2</code> no longer accepts a function, use <code class="inline">rename_with/2</code> instead</li><li><code class="inline">rename_with/3</code> now expects the function as the last argument</li></ul><h3 id="fixed-11" class="section-heading">
+  <a href="#fixed-11" class="hover-link"><i class="ri-link-m" aria-hidden="true"></i>
+  <p class="sr-only">fixed-11</p>
   </a>
   Fixed
 </h3>
